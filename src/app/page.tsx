@@ -14,17 +14,17 @@ export default async function Home() {
           <div className={styles.center}>
             <div className={styles.grid}>
               <div className={styles.card}>
-                <h2>DAI</h2>
+                <h3>DAI</h3>
                 <p>Compra: ${parseFloat(exchange.data.dai.ask).toFixed(2)}</p>
                 <p>Venta: ${parseFloat(exchange.data.dai.bid).toFixed(2)}</p>
               </div>
               <div className={styles.card}>
-                <h2>USDC</h2>
+                <h3>USDC</h3>
                 <p>Compra: ${parseFloat(exchange.data.usdc.ask).toFixed(2)}</p>
                 <p>Venta: ${parseFloat(exchange.data.usdc.bid).toFixed(2)}</p>
               </div>
               <div className={styles.card}>
-                <h2>USDT</h2>
+                <h3>USDT</h3>
                 <p>Compra: ${parseFloat(exchange.data.usdt.ask).toFixed(2)}</p>
                 <p>Venta: ${parseFloat(exchange.data.usdt.bid).toFixed(2)}</p>
               </div>

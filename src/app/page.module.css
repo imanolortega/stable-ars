@@ -79,6 +79,10 @@
   justify-content: center;
 }
 
+.header h2 {
+  font-size: 2rem;
+}
+
 .center {
   display: flex;
   justify-content: center;
@@ -137,7 +141,7 @@
   }
 
   .center {
-    padding: 8rem 0 6rem;
+    padding: 4rem 0 6rem;
   }
 
   .center::before {
