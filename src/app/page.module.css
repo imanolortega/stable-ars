@@ -7,6 +7,15 @@
   min-height: 100vh;
 }
 
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.8rem;
+  opacity: 0.6;
+  margin-bottom: 3rem;
+}
+
 .description {
   display: inherit;
   justify-content: inherit;
@@ -88,7 +97,7 @@
   justify-content: center;
   align-items: center;
   position: relative;
-  padding: 4rem 0;
+  padding: 4rem 0 2rem 0;
 }
 
 .center::before {

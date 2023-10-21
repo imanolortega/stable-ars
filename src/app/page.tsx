@@ -1,4 +1,5 @@
 import styles from "./page.module.css";
+import moment from "moment";
 import { getCryptoCurrencies } from "@/utils/crypto";
 
 export default async function Home() {
@@ -18,7 +19,7 @@ export default async function Home() {
                 <p>Compra: ${parseFloat(exchange.data.dai.ask).toFixed(2)}</p>
                 <p>Venta: ${parseFloat(exchange.data.dai.bid).toFixed(2)}</p>
                 <p>
-                  Spread:{" "}$
+                  Spread: $
                   {(exchange.data.dai.ask - exchange.data.dai.bid)
                     .toFixed(2)
                     .toString()}
@@ -29,7 +30,7 @@ export default async function Home() {
                 <p>Compra: ${parseFloat(exchange.data.usdc.ask).toFixed(2)}</p>
                 <p>Venta: ${parseFloat(exchange.data.usdc.bid).toFixed(2)}</p>
                 <p>
-                  Spread:{" "}$
+                  Spread: $
                   {(exchange.data.usdc.ask - exchange.data.usdc.bid)
                     .toFixed(2)
                     .toString()}
@@ -40,13 +41,21 @@ export default async function Home() {
                 <p>Compra: ${parseFloat(exchange.data.usdt.ask).toFixed(2)}</p>
                 <p>Venta: ${parseFloat(exchange.data.usdt.bid).toFixed(2)}</p>
                 <p>
-                  Spread:{" "}$
+                  Spread: $
                   {(exchange.data.usdt.ask - exchange.data.usdt.bid)
                     .toFixed(2)
                     .toString()}
                 </p>
               </div>
             </div>
+          </div>
+          <div className={styles.footer}>
+            <p>
+              Última actualización:{" "}
+              {moment
+                .unix(exchange.data.usdc.time)
+                .format("DD/MM/YYYY, HH:mm")}
+            </p>
           </div>
         </section>
       ))}
