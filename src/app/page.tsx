@@ -24,47 +24,51 @@ export default async function Home() {
 
   return (
     <main className={styles.main}>
-      <h1>Precios de Stablecoins en Exchanges de Argentina</h1>
+      <h1>Precios de Stablecoins en Argentina</h1>
       <section>
         <div className={styles.header}>
-          <h2 style={{marginBottom: '2rem'}}>Mejores Precios</h2>
+          <h2 style={{ marginBottom: "2rem" }}>Mejores Precios</h2>
         </div>
-        <div className={styles.grid}>
-          <div className={styles.card}>
-            <h3>DAI</h3>
-            <p>
-              Comprar: {bestDAIAsk?.exchange} a ${bestDAIAsk?.value}{" "}
-            </p>
-            <p>
-              Vender: {bestDAIBid?.exchange} a ${bestDAIBid?.value}
-            </p>
-            <p>
-              Spread: {lowestDAISpread?.exchange} a ${lowestDAISpread?.value}
-            </p>
-          </div>
-          <div className={styles.card}>
-            <h3>USDC</h3>
-            <p>
-              Comprar: {bestUSDCAsk?.exchange} a ${bestUSDCAsk?.value}{" "}
-            </p>
-            <p>
-              Vender: {bestUSDCBid?.exchange} a ${bestUSDCBid?.value}
-            </p>
-            <p>
-              Spread: {lowestUSCDSpread?.exchange} a ${lowestUSCDSpread?.value}
-            </p>
-          </div>
-          <div className={styles.card}>
-            <h3>USDT</h3>
-            <p>
-              Comprar: {bestUSDTAsk?.exchange} a ${bestUSDTAsk?.value}{" "}
-            </p>
-            <p>
-              Vender: {bestUSDTBid?.exchange} a ${bestUSDTBid?.value}
-            </p>
-            <p>
-              Spread: {lowestUSDTSpread?.exchange} a ${lowestUSDTSpread?.value}
-            </p>
+        <div className={styles.center}>
+          <div className={styles.grid}>
+            <div className={styles.card}>
+              <h3>DAI</h3>
+              <p>
+                Comprar: {bestDAIAsk?.exchange} a ${bestDAIAsk?.value}{" "}
+              </p>
+              <p>
+                Vender: {bestDAIBid?.exchange} a ${bestDAIBid?.value}
+              </p>
+              <p>
+                Spread: {lowestDAISpread?.exchange} a ${lowestDAISpread?.value}
+              </p>
+            </div>
+            <div className={styles.card}>
+              <h3>USDC</h3>
+              <p>
+                Comprar: {bestUSDCAsk?.exchange} a ${bestUSDCAsk?.value}{" "}
+              </p>
+              <p>
+                Vender: {bestUSDCBid?.exchange} a ${bestUSDCBid?.value}
+              </p>
+              <p>
+                Spread: {lowestUSCDSpread?.exchange} a $
+                {lowestUSCDSpread?.value}
+              </p>
+            </div>
+            <div className={styles.card}>
+              <h3>USDT</h3>
+              <p>
+                Comprar: {bestUSDTAsk?.exchange} a ${bestUSDTAsk?.value}{" "}
+              </p>
+              <p>
+                Vender: {bestUSDTBid?.exchange} a ${bestUSDTBid?.value}
+              </p>
+              <p>
+                Spread: {lowestUSDTSpread?.exchange} a $
+                {lowestUSDTSpread?.value}
+              </p>
+            </div>
           </div>
         </div>
       </section>
