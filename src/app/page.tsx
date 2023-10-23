@@ -1,5 +1,4 @@
 import styles from "./page.module.css";
-import moment from "moment";
 import {
   findBestAskPrice,
   findBestBidPrice,
@@ -27,7 +26,7 @@ export default async function Home() {
       <h1>Precios de Stablecoins en Argentina</h1>
       <section>
         <div className={styles.header}>
-          <h2 style={{ marginBottom: "2rem" }}>Mejores Precios</h2>
+          <h2>Mejores Precios</h2>
         </div>
         <div className={styles.center}>
           <div className={styles.grid}>
