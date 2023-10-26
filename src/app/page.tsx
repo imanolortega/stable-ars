@@ -1,4 +1,4 @@
-import styles from "./page.module.css";
+import styles from "./page.module.scss";
 import {
   findBestAskPrice,
   findBestBidPrice,
@@ -10,17 +10,18 @@ import BestCryptoCard from "./crypto-card/best-crypto-card";
 
 export default async function Home() {
   const data = await getCryptoCurrencies();
-  const currencies = ["dai", "usdc", "usdt"]
-
+  const currencies = ["dai", "usdc", "usdt"];
   return (
-    <main className={styles.main}>
-      <h1>Precios de Stablecoins en Argentina</h1>
+    <main className={styles['main']}>
+      <div className={styles['header']}>
+        <h1>Precios de Stablecoins en Argentina</h1>
+      </div>
       <section>
-        <div className={styles.header}>
+        <div className={styles['section-header']}>
           <h2>Mejores Precios</h2>
         </div>
-        <div className={styles.center}>
-          <div className={styles.grid}>
+        <div className={styles['center']}>
+          <div className={styles['grid']}>
             {
               currencies.map((currency) => (
                 <BestCryptoCard
@@ -38,11 +39,11 @@ export default async function Home() {
       <section>
         {data.map((exchange) => (
           <div key={exchange.name}>
-            <div className={styles.header}>
+            <div className={styles['section-header']}>
               <h2>{exchange.name}</h2>
             </div>
-            <div className={styles.center}>
-              <div className={styles.grid}>
+            <div className={styles['center']}>
+              <div className={styles['grid']}>
                 {Object.entries(exchange.data).map(
                   ([currency, exchangeData]) => (
                     <CryptoCard

@@ -1,4 +1,4 @@
-import styles from "../page.module.css";
+import styles from "./card.module.scss";
 import { Dai, Usdc, Usdt } from "./icons/icons";
 
 interface BestCryptoCardProps {
