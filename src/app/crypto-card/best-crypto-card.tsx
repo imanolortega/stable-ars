@@ -28,13 +28,13 @@ const BestCryptoCard: React.FC<BestCryptoCardProps> = ({
         <h3>{currency.toUpperCase()}</h3>
       </div>
       <p>
-        Comprar: {ask?.exchange} a ${ask?.value}{" "}
+        Comprar: ${ask?.value} en {ask?.exchange}
       </p>
       <p>
-        Vender: {bid?.exchange} a ${bid?.value}
+        Vender: ${bid?.value} en {bid?.exchange}
       </p>
       <p>
-        Spread: {spread?.exchange} a ${spread?.value}
+        Spread: ${spread?.value} en {spread?.exchange}
       </p>
     </div>
   );

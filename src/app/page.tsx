@@ -1,5 +1,6 @@
 import styles from "./page.module.scss";
 import {
+  calculateAverages,
   findBestAskPrice,
   findBestBidPrice,
   findLowestSpread,
@@ -11,10 +12,11 @@ import BestCryptoCard from "./crypto-card/best-crypto-card";
 export default async function Home() {
   const data = await getCryptoCurrencies();
   const currencies = ["dai", "usdc", "usdt"];
+  const averate = calculateAverages(data);
   return (
     <main className={styles['main']}>
       <div className={styles['header']}>
-        <h1>Precios de Stablecoins en Argentina</h1>
+        <h1>Stablecoins en Argentina</h1>
       </div>
       <section>
         <div className={styles['section-header']}>

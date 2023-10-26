@@ -52,6 +52,39 @@ interface ExchangeData {
   };
 }
 
+export function calculateAverages(data: any) {
+  const stableCoins = ["dai", "usdc", "usdt"];
+  const averages: Record<string, any> = {};
+
+  for (const currency of stableCoins) {
+    const askPrices: number[] = [];
+    const bidPrices: number[] = [];
+    const spreads: number[] = [];
+
+    data.forEach((exchange: any) => {
+      const data = exchange.data[currency];
+      if (data) {
+        askPrices.push(data.ask);
+        bidPrices.push(data.bid);
+        const spread = data.ask - data.bid;
+        spreads.push(spread);
+      }
+    });
+
+    const averageAskPrice = askPrices.reduce((total, price) => total + price, 0) / askPrices.length;
+    const averageBidPrice = bidPrices.reduce((total, price) => total + price, 0) / bidPrices.length;
+    const averageSpread = spreads.reduce((total, spread) => total + spread, 0) / spreads.length;
+
+    averages[currency] = {
+      averageAskPrice: parseFloat(averageAskPrice.toFixed(2)),
+      averageBidPrice: parseFloat(averageBidPrice.toFixed(2)),
+      averageSpread: parseFloat(averageSpread.toFixed(2)),
+    };
+  }
+
+  return averages;
+}
+
 export const findBestAskPrice = (data: ExchangeData[], currency: string): { exchange: string; value: number } | null => {
   let bestAskPrice = null;
   let bestAskValue = Infinity;
