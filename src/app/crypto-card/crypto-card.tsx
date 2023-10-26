@@ -1,4 +1,5 @@
 import styles from "../page.module.css";
+import { Dai, Usdc, Usdt } from "./icons/icons";
 
 interface CryptoCardProps {
   currency: string;
@@ -9,9 +10,19 @@ interface CryptoCardProps {
 }
 
 const CryptoCard: React.FC<CryptoCardProps> = ({ currency, exchangeData }) => {
+  const currencyIcons: Record<string, any> = {
+    dai: <Dai />,
+    usdc: <Usdc />,
+    usdt: <Usdt />,
+  };
   return (
     <div className={styles.card}>
-      <h3>{currency.toUpperCase()}</h3>
+      <div className={styles["card-header"]}>
+        <div>
+          {currencyIcons[currency]}
+        </div>
+        <h3>{currency.toUpperCase()}</h3>
+      </div>
       <p>Compra: ${parseFloat(exchangeData.ask).toFixed(2)}</p>
       <p>Venta: ${parseFloat(exchangeData.bid).toFixed(2)}</p>
       <p>
