@@ -7,51 +7,58 @@ import {
   getCryptoCurrencies,
 } from "@/utils/crypto";
 import CryptoCard from "./crypto-card/crypto-card";
-import BestCryptoCard from "./crypto-card/best-crypto-card";
 
 export default async function Home() {
   const data = await getCryptoCurrencies();
   const currencies = ["dai", "usdc", "usdt"];
   const averate = calculateAverages(data);
   return (
-    <main className={styles['main']}>
-      <div className={styles['header']}>
+    <main className={styles["main"]}>
+      <div className={styles["header"]}>
         <h1>Stablecoins en Argentina</h1>
       </div>
       <section>
-        <div className={styles['section-header']}>
+        <div className={styles["section-header"]}>
           <h2>Mejores Precios</h2>
         </div>
-        <div className={styles['center']}>
-          <div className={styles['grid']}>
-            {
-              currencies.map((currency) => (
-                <BestCryptoCard
+        <div className={styles["center"]}>
+          <div className={styles["grid"]}>
+            {currencies.map((currency) => {
+              const bestAsk = findBestAskPrice(data, currency);
+              const bestBid = findBestBidPrice(data, currency);
+              const lowestSpread = findLowestSpread(data, currency);
+              return (
+                <CryptoCard
                   key={currency}
                   currency={currency}
-                  ask={findBestAskPrice(data, currency)}
-                  bid={findBestBidPrice(data, currency)}
-                  spread={findLowestSpread(data, currency)}
+                  ask={`Comprar: $${bestAsk?.value} en ${bestAsk?.exchange}`}
+                  bid={`Vender: ${bestBid?.value} en ${bestBid?.exchange}`}
+                  spread={`Spread: ${lowestSpread?.value} en ${lowestSpread?.exchange}`}
                 />
-              ))
-            }
+              );
+            })}
           </div>
         </div>
       </section>
       <section>
         {data.map((exchange) => (
           <div key={exchange.name}>
-            <div className={styles['section-header']}>
+            <div className={styles["section-header"]}>
               <h2>{exchange.name}</h2>
             </div>
-            <div className={styles['center']}>
-              <div className={styles['grid']}>
+            <div className={styles["center"]}>
+              <div className={styles["grid"]}>
                 {Object.entries(exchange.data).map(
                   ([currency, exchangeData]) => (
                     <CryptoCard
                       key={currency}
                       currency={currency}
-                      exchangeData={exchangeData}
+                      ask={`Compra:$${parseFloat(exchangeData.ask).toFixed(2)}`}
+                      bid={`Venta: $${parseFloat(exchangeData.bid).toFixed(2)}`}
+                      spread={`Spread: $
+                      ${(
+                        parseInt(exchangeData.ask) - parseInt(exchangeData.bid)
+                      ).toFixed(2)}`}
                     />
                   )
                 )}

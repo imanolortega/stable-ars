@@ -2,14 +2,18 @@ import styles from "./card.module.scss";
 import { Dai, Usdc, Usdt } from "./icons/icons";
 
 interface CryptoCardProps {
+  ask: string;
+  bid: string;
   currency: string;
-  exchangeData: {
-    ask: string;
-    bid: string;
-  };
+  spread: string;
 }
 
-const CryptoCard: React.FC<CryptoCardProps> = ({ currency, exchangeData }) => {
+const CryptoCard: React.FC<CryptoCardProps> = ({
+  ask,
+  bid,
+  currency,
+  spread,
+}) => {
   const currencyIcons: Record<string, any> = {
     dai: <Dai />,
     usdc: <Usdc />,
@@ -18,17 +22,12 @@ const CryptoCard: React.FC<CryptoCardProps> = ({ currency, exchangeData }) => {
   return (
     <div className={styles.card}>
       <div className={styles["card-header"]}>
-        <div>
-          {currencyIcons[currency]}
-        </div>
+        <div>{currencyIcons[currency]}</div>
         <h3>{currency.toUpperCase()}</h3>
       </div>
-      <p>Compra: ${parseFloat(exchangeData.ask).toFixed(2)}</p>
-      <p>Venta: ${parseFloat(exchangeData.bid).toFixed(2)}</p>
-      <p>
-        Spread: $
-        {(parseInt(exchangeData.ask) - parseInt(exchangeData.bid)).toFixed(2)}
-      </p>
+      <p>{ask}</p>
+      <p>{bid}</p>
+      <p>{spread}</p>
     </div>
   );
 };
