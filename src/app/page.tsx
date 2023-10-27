@@ -12,11 +12,30 @@ export default async function Home() {
   const data = await getCryptoCurrencies();
   const currencies = ["dai", "usdc", "usdt"];
   const averate = calculateAverages(data);
+  console.log(averate)
   return (
     <main className={styles["main"]}>
       <div className={styles["header"]}>
         <h1>Stablecoins en Argentina</h1>
       </div>
+      <section>
+        <div className={styles["section-header"]}>
+          <h2>Promedio de Precios</h2>
+        </div>
+        <div className={styles["center"]}>
+          <div className={styles["grid"]}>
+            {currencies.map((currency) => (
+              <CryptoCard
+                key={currency}
+                currency={currency}
+                ask={`Compra: $${averate[currency].averageAskPrice}`}
+                bid={`Venta: $${averate[currency].averageBidPrice}`}
+                spread={`Spread: $${averate[currency].averageSpread}`}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
       <section>
         <div className={styles["section-header"]}>
           <h2>Mejores Precios</h2>
