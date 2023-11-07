@@ -8,7 +8,7 @@
 
   .header {
     display: flex;
-    align-items: start;
+    align-items: flex-start;
     h1 {
       text-align: left;
       font-size: 2.5rem;
@@ -19,12 +19,16 @@
 
 .section-header {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   flex-direction: column;
 
   h2 {
-    font-size: 2rem;
+    font-size: 1.5rem;
+  }
+
+  .selected-exchange-title {
+    margin-bottom: 1.5rem;
   }
 }
 
