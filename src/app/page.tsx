@@ -17,7 +17,7 @@ export default async function Home() {
       component: <SelectedExchange currencies={currencies} data={data} />,
     },
     {
-      title: "Cotizaciones promedio",
+      title: "Promedio de cotizaciones",
       classNameTitle: '',
       component: <AveragePrices currencies={currencies} average={average} />,
     },
