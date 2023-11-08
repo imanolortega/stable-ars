@@ -3,7 +3,8 @@ import { calculateAverages, getCryptoCurrencies } from "@/utils/crypto";
 import SelectedExchange from "@/components/selected-exchange/selected-exchange";
 import BestPrices from "@/components/best-prices/best-prices";
 import AveragePrices from "@/components/average-prices/average-prices";
-import CryptoCard from "@/components/crypto-card/crypto-card";
+import Image from "next/image";
+import { formatDateToSpanish } from "@/utils/common";
 
 export default async function Home() {
   const data = await getCryptoCurrencies();
@@ -18,21 +19,38 @@ export default async function Home() {
     },
     {
       title: "Promedio de cotizaciones",
-      classNameTitle: '',
+      classNameTitle: "",
       component: <AveragePrices currencies={currencies} average={average} />,
     },
     {
       title: "Mejores cotizaciones",
-      classNameTitle: '',
+      classNameTitle: "",
       component: <BestPrices currencies={currencies} data={data} />,
     },
   ];
 
+  const date = new Date()
+  const formatDate = formatDateToSpanish(date)
+
   return (
     <main className={styles["main"]}>
-      <div className={styles["header"]}>
-        <h1>Stablecoins en Argentina</h1>
-      </div>
+      <header className={styles["header"]}>
+        <h1 style={{ opacity: 0, position: "absolute" }}>
+          Stablecoins en Argentina
+        </h1>
+        <div className={styles['logo']}>
+          <Image
+            width={40}
+            height={40}
+            src="/stable-ars.png"
+            alt="Stablecoins en Argentina"
+          />
+          <p>STABLEARS</p>
+        </div>
+        <div className={styles['data']}>
+          <p>{formatDate}</p>
+        </div>
+      </header>
       {homeSections.map((section) => (
         <section key={section.title}>
           <div className={styles["section-header"]}>
