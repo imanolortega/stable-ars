@@ -20,7 +20,8 @@ const CryptoCard: React.FC<CryptoCardProps> = ({
     usdt: <Usdt />,
   };
   return (
-    <div className={styles.card}>
+    <div>
+      <div className={styles.card}>
       <div className={styles["card-header"]}>
         <div>{currencyIcons[currency]}</div>
         <h3>{currency.toUpperCase()}</h3>
@@ -28,6 +29,7 @@ const CryptoCard: React.FC<CryptoCardProps> = ({
       <p>{ask}</p>
       <p>{bid}</p>
       <p>{spread}</p>
+    </div>
     </div>
   );
 };

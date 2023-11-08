@@ -3,6 +3,7 @@ import { calculateAverages, getCryptoCurrencies } from "@/utils/crypto";
 import SelectedExchange from "@/components/selected-exchange/selected-exchange";
 import BestPrices from "@/components/best-prices/best-prices";
 import AveragePrices from "@/components/average-prices/average-prices";
+import CryptoCard from "@/components/crypto-card/crypto-card";
 
 export default async function Home() {
   const data = await getCryptoCurrencies();
@@ -32,6 +33,14 @@ export default async function Home() {
       <div className={styles["header"]}>
         <h1>Stablecoins en Argentina</h1>
       </div>
+      {/* <section>
+        <CryptoCard
+          currency="dai"
+          ask={`Compra: $${parseFloat(average.dai.ask).toFixed(2)}`}
+          bid={`Venta: $${parseFloat(average.dai.bid).toFixed(2)}`}
+          spread={`Spread: $${(parseFloat(average.dai.ask) - parseFloat(average.dai.bid)).toFixed(2)}`}
+        />
+      </section> */}
       {homeSections.map((section) => (
         <section key={section.title}>
           <div className={styles["section-header"]}>
