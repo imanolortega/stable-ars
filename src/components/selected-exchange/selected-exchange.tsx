@@ -40,7 +40,7 @@ export default function SelectedExchange({
           onChange={handleSelectChange}
         >
           {data.map((exchange: any) => (
-            <option key={exchange.name} value={exchange.name}>
+            <option className={styles["option"]} key={exchange.name} value={exchange.name}>
               {exchange.name}
             </option>
           ))}

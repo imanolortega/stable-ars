@@ -4,12 +4,16 @@
   .select-inner {
     z-index: 1;
     appearance: auto;
-    background: rgba(var(--card-rgb), 0.1);
+    background: black;
     border: 1px solid rgba(var(--card-border-rgb), 0.15);
     padding: 0.7rem;
     border-radius: var(--border-radius-small);
     transition: background 200ms, border 200ms;
     position: relative;
+
+    .option {
+      background: red;
+    }
   }
 }
 
