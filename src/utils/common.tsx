@@ -1,5 +1,12 @@
+const moment = require('moment');
+
 function capitalizeFirstLetter(text: string) {
   return text.charAt(0).toUpperCase() + text.slice(1);
+}
+
+export function formatTimestampToDateTime(timestamp: number) {
+  const formattedDateTime = moment.unix(timestamp).locale('es').format('HH:mm');
+  return formattedDateTime;
 }
 
 export function formatDateToSpanish(date: Date): string {

@@ -4,12 +4,13 @@ import SelectedExchange from "@/components/selected-exchange/selected-exchange";
 import BestPrices from "@/components/best-prices/best-prices";
 import AveragePrices from "@/components/average-prices/average-prices";
 import Image from "next/image";
-import { formatDateToSpanish } from "@/utils/common";
+import { formatDateToSpanish, formatTimestampToDateTime } from "@/utils/common";
 
 export default async function Home() {
   const data = await getCryptoCurrencies();
   const currencies = ["dai", "usdc", "usdt"];
   const average = calculateAverages(data);
+  const lastUpdate = formatTimestampToDateTime(data[0].data.dai.time);
 
   const homeSections = [
     {
@@ -29,36 +30,41 @@ export default async function Home() {
     },
   ];
 
-  const date = new Date()
-  const formatDate = formatDateToSpanish(date)
+  const date = new Date();
+  const formatDate = formatDateToSpanish(date);
 
   return (
-    <main className={styles["main"]}>
-      <header className={styles["header"]}>
-        <h1 style={{ opacity: 0, position: "absolute" }}>
-          Stablecoins en Argentina
-        </h1>
-        <div className={styles['logo']}>
-          <Image
-            width={40}
-            height={40}
-            src="/stable-ars.png"
-            alt="Stablecoins en Argentina"
-          />
-          <p>STABLEARS</p>
-        </div>
-        <div className={styles['data']}>
-          <p>{formatDate}</p>
-        </div>
-      </header>
-      {homeSections.map((section) => (
-        <section key={section.title}>
-          <div className={styles["section-header"]}>
-            <h2 className={section.classNameTitle}>{section.title}</h2>
+    <>
+      <main className={styles["main"]}>
+        <header className={styles["header"]}>
+          <h1 style={{ opacity: 0, position: "absolute" }}>
+            Stablecoins en Argentina
+          </h1>
+          <div className={styles["logo"]}>
+            <Image
+              width={40}
+              height={40}
+              src="/stable-ars.png"
+              alt="Stablecoins en Argentina"
+            />
+            <p>STABLEARS</p>
           </div>
-          {section.component}
-        </section>
-      ))}
-    </main>
+          <div className={styles["data"]}>
+            <p>{formatDate}</p>
+          </div>
+        </header>
+        {homeSections.map((section) => (
+          <section key={section.title}>
+            <div className={styles["section-header"]}>
+              <h2 className={section.classNameTitle}>{section.title}</h2>
+            </div>
+            {section.component}
+          </section>
+        ))}
+      </main>
+      <footer className={styles["footer"]}>
+        Última actualización a las {lastUpdate}
+      </footer>
+    </>
   );
 }
