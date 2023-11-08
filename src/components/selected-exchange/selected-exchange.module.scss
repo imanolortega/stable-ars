@@ -12,7 +12,9 @@
     position: relative;
 
     .option {
-      background: red;
+      background: black;
+      padding: 0.7rem;
+      border-radius: var(--border-radius-small);
     }
   }
 }
