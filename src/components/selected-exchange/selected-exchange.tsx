@@ -1,7 +1,8 @@
 "use client";
-import React, { useState } from "react";
-import styles from "../../app/page.module.scss";
+import React, { useEffect, useRef, useState } from "react";
+import styles from "./selected-exchange.module.scss";
 import CryptoCard from "../crypto-card/crypto-card";
+import ArrowIcon from "./arrow";
 
 export default function SelectedExchange({
   currencies,
@@ -15,23 +16,45 @@ export default function SelectedExchange({
     (exchange: any) => exchange.name === selectedExchange
   );
 
+  useEffect(() => {
+    const storedExchange = localStorage.getItem("selectedExchange");
+    if (
+      storedExchange &&
+      data.find((exchange: any) => exchange.name === storedExchange)
+    ) {
+      setSelectedExchange(storedExchange);
+    }
+  }, [data]);
+
+  const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const newSelectedExchange = e.target.value;
+    setSelectedExchange(newSelectedExchange);
+    localStorage.setItem("selectedExchange", newSelectedExchange);
+  };
+
+  // const selectRef = useRef<HTMLSelectElement | null>(null);
+
+  // const openSelect = () => {
+  //   if (selectRef.current) {
+  //     selectRef.current.click();
+  //   }
+  // };
+
   return (
     <>
-      <select
-        style={{
-          padding: "0.3rem",
-          background: "transparent",
-          borderRadius: "0.3rem",
-        }}
-        value={selectedExchange}
-        onChange={(e) => setSelectedExchange(e.target.value)}
-      >
-        {data.map((exchange: any) => (
-          <option key={exchange.name} value={exchange.name}>
-            {exchange.name}
-          </option>
-        ))}
-      </select>
+      <label className={styles["select-wrapper"]}>
+        <select
+          className={styles["select-inner"]}
+          value={selectedExchange}
+          onChange={handleSelectChange}
+        >
+          {data.map((exchange: any) => (
+            <option key={exchange.name} value={exchange.name}>
+              {exchange.name}
+            </option>
+          ))}
+        </select>
+      </label>
       <div className={styles["center"]}>
         <div className={styles["grid"]}>
           {currencies.map((currency) => (
