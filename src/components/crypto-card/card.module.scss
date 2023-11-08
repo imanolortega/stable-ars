@@ -40,7 +40,7 @@
 
   .card-header {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     margin-bottom: 1rem;
 
@@ -51,10 +51,48 @@
     }
   }
 
-  p {
-    margin: 0;
-    opacity: 0.6;
-    font-size: 0.9rem;
-    line-height: 1.5;
+  .card-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+
+    p {
+      padding: 1rem 0;
+      font-size: 1.4rem;
+      display: flex;
+      flex-direction: column;
+
+      span {
+        font-size: 0.8rem;
+        padding: 0.2rem 0;
+      }
+    }
+
+    p:first-child {
+      text-align: left;
+      border-right: 0.5px solid rgba(var(--card-border-rgb), 0.15);
+    }
+
+    p:last-child {
+      text-align: right;
+      border-left: 0.5px solid rgba(var(--card-border-rgb), 0.15);
+    }
+  }
+
+  .card-footer {
+    p {
+      margin: 0;
+      opacity: 0.6;
+      font-size: 1rem;
+      line-height: 1.5;
+      text-transform: uppercase;
+      display: flex;
+      flex-direction: column;
+
+      span {
+        font-size: 0.6rem;
+      }
+    }
   }
 }

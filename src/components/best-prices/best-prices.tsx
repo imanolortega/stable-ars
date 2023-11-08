@@ -24,9 +24,12 @@ export default function BestPrices({
             <CryptoCard
               key={currency}
               currency={currency}
-              ask={`Comprar: $${bestAsk?.value} en ${bestAsk?.exchange}`}
-              bid={`Vender: ${bestBid?.value} en ${bestBid?.exchange}`}
-              spread={`Spread: ${lowestSpread?.value} en ${lowestSpread?.exchange}`}
+              ask={`${bestAsk?.value}`}
+              askExchange={bestAsk?.exchange}
+              bid={`${bestBid?.value}`}
+              bidExchange={bestBid?.exchange}
+              spread={`${lowestSpread?.value}`}
+              spreadExchange={lowestSpread?.exchange}
             />
           );
         })}

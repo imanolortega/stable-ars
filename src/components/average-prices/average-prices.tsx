@@ -15,9 +15,9 @@ export default function AveragePrices({
           <CryptoCard
             key={currency}
             currency={currency}
-            ask={`Compra: $${average[currency].averageAskPrice}`}
-            bid={`Venta: $${average[currency].averageBidPrice}`}
-            spread={`Spread: $${average[currency].averageSpread}`}
+            ask={average[currency].averageAskPrice}
+            bid={average[currency].averageBidPrice}
+            spread={average[currency].averageSpread}
           />
         ))}
       </div>

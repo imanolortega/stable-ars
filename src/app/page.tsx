@@ -33,14 +33,6 @@ export default async function Home() {
       <div className={styles["header"]}>
         <h1>Stablecoins en Argentina</h1>
       </div>
-      {/* <section>
-        <CryptoCard
-          currency="dai"
-          ask={`Compra: $${parseFloat(average.dai.ask).toFixed(2)}`}
-          bid={`Venta: $${parseFloat(average.dai.bid).toFixed(2)}`}
-          spread={`Spread: $${(parseFloat(average.dai.ask) - parseFloat(average.dai.bid)).toFixed(2)}`}
-        />
-      </section> */}
       {homeSections.map((section) => (
         <section key={section.title}>
           <div className={styles["section-header"]}>

@@ -52,13 +52,13 @@ export default function SelectedExchange({
             <CryptoCard
               key={currency}
               currency={currency}
-              ask={`Compra: $${parseFloat(
+              ask={`${parseFloat(
                 selectedExchangeData?.data[currency].ask
               ).toFixed(2)}`}
-              bid={`Venta: $${parseFloat(
+              bid={`${parseFloat(
                 selectedExchangeData?.data[currency].bid
               ).toFixed(2)}`}
-              spread={`Spread: $${(
+              spread={`${(
                 parseFloat(selectedExchangeData?.data[currency].ask) -
                 parseFloat(selectedExchangeData?.data[currency].bid)
               ).toFixed(2)}`}
