@@ -1,8 +1,7 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./selected-exchange.module.scss";
 import CryptoCard from "../crypto-card/crypto-card";
-import ArrowIcon from "./arrow";
 
 export default function SelectedExchange({
   currencies,
@@ -31,14 +30,6 @@ export default function SelectedExchange({
     setSelectedExchange(newSelectedExchange);
     localStorage.setItem("selectedExchange", newSelectedExchange);
   };
-
-  // const selectRef = useRef<HTMLSelectElement | null>(null);
-
-  // const openSelect = () => {
-  //   if (selectRef.current) {
-  //     selectRef.current.click();
-  //   }
-  // };
 
   return (
     <>
