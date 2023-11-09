@@ -6,7 +6,7 @@ import AveragePrices from "@/components/average-prices/average-prices";
 import Image from "next/image";
 import { formatTimestampToDateTime } from "@/utils/common";
 
-const blankSpace = <>&nbsp;</>
+const blankSpace = <>&nbsp;</>;
 
 export default async function Home() {
   const data = await getCryptoCurrencies();
@@ -31,7 +31,6 @@ export default async function Home() {
       component: <BestPrices currencies={currencies} data={data} />,
     },
   ];
-
 
   return (
     <>
@@ -63,25 +62,31 @@ export default async function Home() {
         ))}
       </main>
       <footer className={styles["footer"]}>
+        <p>Última actualización {lastUpdate}.</p>
+
         <p>
-          Última actualización {lastUpdate}. Datos obtenidos a través de la API
-          de{blankSpace}
+          Datos obtenidos a través de la API de{blankSpace}
+          <a
+            className={styles['link']}
+            href="https://criptoya.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            CriptoYa.
+          </a>
         </p>
-        <a
-          href="https://criptoya.com"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          CriptoYa.
-        </a>
-        <p>{blankSpace}Web creada por{blankSpace}</p>
-        <a
-          href="https://imanolortega.dev"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Imanol.
-        </a>
+
+        <p>
+          {blankSpace}Web creada por{blankSpace}
+          <a
+            className={styles['link']}
+            href="https://imanolortega.dev"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Imanol.
+          </a>
+        </p>
       </footer>
     </>
   );
