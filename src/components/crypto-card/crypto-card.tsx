@@ -55,21 +55,18 @@ const CryptoCard: React.FC<CryptoCardProps> = ({
       </div>
       <div className={styles["card-body"]}>
         <p>
-          <span>Compra</span>
-          ${ask}
-          <span>{askExchange}</span>
+          <span>Comprá a</span>${ask}
+          {askExchange && <span>en {askExchange}</span>}
         </p>
         <p>
-          <span>Venta</span>
-          ${bid}
-          <span>{bidExchange}</span>
+          <span>Vendé a</span>${bid}
+          {bidExchange && <span>en {bidExchange}</span>}
         </p>
       </div>
       <div className={styles["card-footer"]}>
         <p>
-          <span>Spread</span>
-          ${spread}
-          <span>{spreadExchange}</span>
+          <span>Spread</span>${spread}
+          {spreadExchange && <span>en {spreadExchange}</span>}
         </p>
       </div>
     </div>
