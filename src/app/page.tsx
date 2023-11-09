@@ -4,7 +4,9 @@ import SelectedExchange from "@/components/selected-exchange/selected-exchange";
 import BestPrices from "@/components/best-prices/best-prices";
 import AveragePrices from "@/components/average-prices/average-prices";
 import Image from "next/image";
-import { formatDateToSpanish, formatTimestampToDateTime } from "@/utils/common";
+import { formatTimestampToDateTime } from "@/utils/common";
+
+const blankSpace = <>&nbsp;</>
 
 export default async function Home() {
   const data = await getCryptoCurrencies();
@@ -30,8 +32,6 @@ export default async function Home() {
     },
   ];
 
-  const date = new Date();
-  const formatDate = formatDateToSpanish(date);
 
   return (
     <>
@@ -63,7 +63,25 @@ export default async function Home() {
         ))}
       </main>
       <footer className={styles["footer"]}>
-        Última actualización {lastUpdate}
+        <p>
+          Última actualización {lastUpdate}. Datos obtenidos a través de la API
+          de{blankSpace}
+        </p>
+        <a
+          href="https://criptoya.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          CriptoYa.
+        </a>
+        <p>{blankSpace}Web creada por{blankSpace}</p>
+        <a
+          href="https://imanolortega.dev"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Imanol.
+        </a>
       </footer>
     </>
   );
