@@ -50,7 +50,7 @@ export default async function Home() {
             <p>STABLEARS</p>
           </div>
           <div className={styles["data"]}>
-            <p>{formatDate}</p>
+            <p>Última actualización {lastUpdate}</p>
           </div>
         </header>
         {homeSections.map((section) => (
@@ -63,7 +63,7 @@ export default async function Home() {
         ))}
       </main>
       <footer className={styles["footer"]}>
-        Última actualización a las {lastUpdate}
+        Última actualización {lastUpdate}
       </footer>
     </>
   );

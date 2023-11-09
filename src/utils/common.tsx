@@ -1,11 +1,11 @@
-const moment = require('moment-timezone');
+const moment = require('moment');
 
 function capitalizeFirstLetter(text: string) {
   return text.charAt(0).toUpperCase() + text.slice(1);
 }
 
 export function formatTimestampToDateTime(timestamp: number) {
-  const formattedDateTime = moment.unix(timestamp).tz('America/Argentina/Buenos_Aires').format('HH:mm');
+  const formattedDateTime = moment.unix(timestamp).locale('es-ES').format('DD/MM/YY HH:MM');
   return formattedDateTime;
 }
 
