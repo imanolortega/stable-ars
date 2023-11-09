@@ -1,21 +1,9 @@
 .select-wrapper {
   display: flex;
+  width: 25%;
 
-  select {
-    z-index: 1;
-    appearance: auto;
-    background: black;
-    border: 1px solid rgba(var(--card-border-rgb), 0.15);
-    padding: 0.7rem;
-    border-radius: var(--border-radius-small);
-    transition: background 200ms, border 200ms;
-    position: relative;
-
-    option {
-      background: black;
-      padding: 0.7rem;
-      border-radius: var(--border-radius-small);
-    }
+  @media (max-width: 700px) {
+    width: 100%;
   }
 }
 

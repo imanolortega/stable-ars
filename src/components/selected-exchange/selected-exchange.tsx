@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "./selected-exchange.module.scss";
 import CryptoCard from "../crypto-card/crypto-card";
+import { Select } from '@chakra-ui/react'
 
 export default function SelectedExchange({
   currencies,
@@ -34,17 +35,16 @@ export default function SelectedExchange({
   return (
     <>
       <label className={styles["select-wrapper"]}>
-        <select
-          className={styles["select-inner"]}
+        <Select
           value={selectedExchange}
           onChange={handleSelectChange}
         >
           {data.map((exchange: any) => (
-            <option className={styles["option"]} key={exchange.name} value={exchange.name}>
+            <option key={exchange.name} value={exchange.name}>
               {exchange.name}
             </option>
           ))}
-        </select>
+        </Select>
       </label>
       <div className={styles["center"]}>
         <div className={styles["grid"]}>
