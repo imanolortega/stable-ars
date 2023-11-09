@@ -77,7 +77,7 @@ export default async function Home() {
         </p>
 
         <p>
-          {blankSpace}Web creada por{blankSpace}
+          {blankSpace}Web por{blankSpace}
           <a
             className={styles['link']}
             href="https://imanolortega.dev"
