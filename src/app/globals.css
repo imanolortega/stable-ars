@@ -107,16 +107,4 @@ a {
   html {
     color-scheme: dark;
   }
-
-  .chakra-select {
-    background-color: black;
-  }
-
-  .chakra-select option {
-    background-color: black;
-  }
-}
-
-.chakra-select {
-  background-color: #e8e8e8;
 }
