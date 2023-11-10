@@ -5,9 +5,11 @@
   select {
     font-family: inherit;
     border: 1px solid rgba(var(--card-border-rgb), 0.15);
+    background-color: black;
 
     option {
       font-family: inherit;
+      background-color: black;
     }
   }
 
