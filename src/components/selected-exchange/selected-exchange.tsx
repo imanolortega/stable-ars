@@ -34,7 +34,7 @@ export default function SelectedExchange({
 
   return (
     <>
-      <div className={styles["select-wrapper"]}>
+      <label className={styles["select-wrapper"]}>
         <Select
           value={selectedExchange}
           onChange={handleSelectChange}
@@ -46,7 +46,7 @@ export default function SelectedExchange({
             </option>
           ))}
         </Select>
-      </div>
+      </label>
       <div className={styles["center"]}>
         <div className={styles["grid"]}>
           {currencies.map((currency) => (
