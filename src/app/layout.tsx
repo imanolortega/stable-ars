@@ -7,9 +7,9 @@ import { Providers } from "./providers";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Stablears | Stablecoins en Argentina",
+  title: "Stablears | Cotizaciones de stablecoins en Argentina",
   description:
-    "Precios de stablecoins en Argentina: DAI, USDC, USDT en pesos argentinos.",
+    "Cotizaciones de stablecoins en Argentina: DAI, USDC, USDT en pesos argentinos.",
 };
 
 export default function RootLayout({
