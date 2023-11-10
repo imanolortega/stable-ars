@@ -26,7 +26,7 @@ const colorMap: any = {
   },
 };
 
-const CryptoCard: React.FC<CryptoCardProps> = ({
+export default function CryptoCard({
   ask,
   askExchange,
   bid,
@@ -34,7 +34,7 @@ const CryptoCard: React.FC<CryptoCardProps> = ({
   currency,
   spread,
   spreadExchange,
-}) => {
+}: CryptoCardProps) {
   const currencyIcons: Record<string, any> = {
     dai: <Dai />,
     usdc: <Usdc />,
@@ -71,6 +71,4 @@ const CryptoCard: React.FC<CryptoCardProps> = ({
       </div>
     </div>
   );
-};
-
-export default CryptoCard;
+}
