@@ -111,6 +111,10 @@ a {
   .chakra-select {
     background-color: black;
   }
+
+  .chakra-select option {
+    background-color: black;
+  }
 }
 
 .chakra-select {
