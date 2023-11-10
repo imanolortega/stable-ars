@@ -3,11 +3,13 @@
   width: 25%;
 
   select {
-    background: var(--select-bg);
+    font-family: inherit;
+    background: var(--background-start-rgb);
     border: 1px solid rgba(var(--card-border-rgb), 0.15);
 
     option {
-      background: var(--select-bg);
+      font-family: inherit;
+      background: var(--background-start-rgb);
     }
   }
 
