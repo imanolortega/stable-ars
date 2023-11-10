@@ -3,11 +3,11 @@
   width: 25%;
 
   select {
-    background: var(--foreground-rgb);
+    background: black;
     border: 1px solid rgba(var(--card-border-rgb), 0.15);
 
     option {
-      background: var(--foreground-rgb);
+      background: black;
     }
   }
 
