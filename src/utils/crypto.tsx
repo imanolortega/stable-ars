@@ -26,9 +26,7 @@ export async function getCryptoCurrencies() {
 
     for (const coin of stableCoins) {
       const url = `https://criptoya.com/api/${exchange}/${coin}/ars/0.1`;
-      const response = await fetch(url, {
-        next: { revalidate: 60 },
-      });
+      const response = await fetch(url, { cache: "no-store" });
       const data = await response.json();
       exchangeData[coin] = data;
     }
@@ -71,9 +69,12 @@ export function calculateAverages(data: any) {
       }
     });
 
-    const averageAskPrice = askPrices.reduce((total, price) => total + price, 0) / askPrices.length;
-    const averageBidPrice = bidPrices.reduce((total, price) => total + price, 0) / bidPrices.length;
-    const averageSpread = spreads.reduce((total, spread) => total + spread, 0) / spreads.length;
+    const averageAskPrice =
+      askPrices.reduce((total, price) => total + price, 0) / askPrices.length;
+    const averageBidPrice =
+      bidPrices.reduce((total, price) => total + price, 0) / bidPrices.length;
+    const averageSpread =
+      spreads.reduce((total, spread) => total + spread, 0) / spreads.length;
 
     averages[currency] = {
       averageAskPrice: parseFloat(averageAskPrice.toFixed(2)),
@@ -85,7 +86,10 @@ export function calculateAverages(data: any) {
   return averages;
 }
 
-export const findBestAskPrice = (data: ExchangeData[], currency: string): { exchange: string; value: number } | null => {
+export const findBestAskPrice = (
+  data: ExchangeData[],
+  currency: string
+): { exchange: string; value: number } | null => {
   let bestAskPrice = null;
   let bestAskValue = Infinity;
 
@@ -105,7 +109,10 @@ export const findBestAskPrice = (data: ExchangeData[], currency: string): { exch
   return bestAskPrice;
 };
 
-export const findBestBidPrice = (data: ExchangeData[], currency: string): { exchange: string; value: number } | null => {
+export const findBestBidPrice = (
+  data: ExchangeData[],
+  currency: string
+): { exchange: string; value: number } | null => {
   let bestBidPrice = null;
   let bestBidValue = 0;
 
@@ -125,7 +132,10 @@ export const findBestBidPrice = (data: ExchangeData[], currency: string): { exch
   return bestBidPrice;
 };
 
-export const findLowestSpread = (data: ExchangeData[], currency: string): { exchange: string; value: number } | null => {
+export const findLowestSpread = (
+  data: ExchangeData[],
+  currency: string
+): { exchange: string; value: number } | null => {
   let lowestSpread = null;
   let lowestSpreadValue = Infinity;
 
@@ -145,4 +155,3 @@ export const findLowestSpread = (data: ExchangeData[], currency: string): { exch
 
   return lowestSpread;
 };
-
