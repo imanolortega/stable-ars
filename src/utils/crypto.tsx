@@ -26,7 +26,7 @@ export async function getCryptoCurrencies() {
 
     for (const coin of stableCoins) {
       const url = `https://criptoya.com/api/${exchange}/${coin}/ars/0.1`;
-      const response = await fetch(url, { cache: "no-store" });
+      const response = await fetch(url, { next: { revalidate: 1800 } });
       const data = await response.json();
       exchangeData[coin] = data;
     }
