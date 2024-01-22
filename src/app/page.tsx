@@ -1,5 +1,5 @@
 import styles from "./page.module.scss";
-import { calculateAverages, getCryptoCurrencies } from "@/utils/crypto";
+import { calculateAverages, getCryptoCurrencies, getCryptoData } from "@/utils/crypto";
 import SelectedExchange from "@/components/selected-exchange/selected-exchange";
 import BestPrices from "@/components/best-prices/best-prices";
 import AveragePrices from "@/components/average-prices/average-prices";
@@ -9,10 +9,10 @@ import { formatTimestampToDateTime } from "@/utils/common";
 const blankSpace = <>&nbsp;</>;
 
 export default async function Home() {
-  const data = await getCryptoCurrencies();
+  const data = await getCryptoData();
   const currencies = ["dai", "usdc", "usdt"];
-  const average = calculateAverages(data);
-  const lastUpdate = formatTimestampToDateTime(data[0].data.dai.time);
+  const average = await calculateAverages(data);
+  const lastUpdate = await formatTimestampToDateTime(data[0].data.dai.time);
 
   const homeSections = [
     {
@@ -63,11 +63,10 @@ export default async function Home() {
       </main>
       <footer className={styles["footer"]}>
         <p>Última actualización {lastUpdate}.</p>
-
         <p>
           Datos obtenidos a través de la API de{blankSpace}
           <a
-            className={styles['link']}
+            className={styles["link"]}
             href="https://criptoya.com"
             target="_blank"
             rel="noopener noreferrer"
@@ -79,7 +78,7 @@ export default async function Home() {
         <p>
           {blankSpace}Web por{blankSpace}
           <a
-            className={styles['link']}
+            className={styles["link"]}
             href="https://imanolortega.dev"
             target="_blank"
             rel="noopener noreferrer"
