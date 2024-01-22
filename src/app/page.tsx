@@ -1,10 +1,8 @@
 import styles from "./page.module.scss";
-import { calculateAverages, getCryptoCurrencies, getCryptoData } from "@/utils/crypto";
-import SelectedExchange from "@/components/selected-exchange/selected-exchange";
-import BestPrices from "@/components/best-prices/best-prices";
-import AveragePrices from "@/components/average-prices/average-prices";
+import { calculateAverages, getCryptoData } from "@/utils/crypto";
 import Image from "next/image";
 import { formatTimestampToDateTime } from "@/utils/common";
+import HomeSections from "@/components/home-sections/home-sections";
 
 const blankSpace = <>&nbsp;</>;
 
@@ -13,24 +11,6 @@ export default async function Home() {
   const currencies = ["dai", "usdc", "usdt"];
   const average = await calculateAverages(data);
   const lastUpdate = await formatTimestampToDateTime(data[0].data.dai.time);
-
-  const homeSections = [
-    {
-      title: "Cotizaciones por exchange",
-      classNameTitle: styles["selected-exchange-title"],
-      component: <SelectedExchange currencies={currencies} data={data} />,
-    },
-    {
-      title: "Promedio de cotizaciones",
-      classNameTitle: "",
-      component: <AveragePrices currencies={currencies} average={average} />,
-    },
-    {
-      title: "Mejores cotizaciones",
-      classNameTitle: "",
-      component: <BestPrices currencies={currencies} data={data} />,
-    },
-  ];
 
   return (
     <>
@@ -52,14 +32,7 @@ export default async function Home() {
             <p>Última actualización {lastUpdate}</p>
           </div>
         </header>
-        {homeSections.map((section) => (
-          <section key={section.title}>
-            <div className={styles["section-header"]}>
-              <h2 className={section.classNameTitle}>{section.title}</h2>
-            </div>
-            {section.component}
-          </section>
-        ))}
+        <HomeSections average={average} currencies={currencies} data={data} />
       </main>
       <footer className={styles["footer"]}>
         <p>Última actualización {lastUpdate}.</p>
