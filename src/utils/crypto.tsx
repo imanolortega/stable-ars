@@ -40,7 +40,7 @@ export async function getCryptoCurrencies() {
 }
 
 export async function getCryptoData() {
-  const res = await fetch("http://localhost:3000/api/crypto", {
+  const res = await fetch(`${process.env.FRONTEND_URL}api/crypto`, {
     next: { revalidate: 1800 },
   });
 
