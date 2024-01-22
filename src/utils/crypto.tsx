@@ -26,7 +26,7 @@ export async function getCryptoCurrencies() {
 
     for (const coin of stableCoins) {
       const url = `https://criptoya.com/api/${exchange}/${coin}/ars/0.1`;
-      const response = await fetch(url, { cache: 'no-store' });
+      const response = await fetch(url, { cache: "no-store" });
       const data = await response.json();
       exchangeData[coin] = data;
     }
@@ -40,16 +40,16 @@ export async function getCryptoCurrencies() {
 }
 
 export async function getCryptoData() {
-  const res = await fetch(`${process.env.FRONTEND_URL}api/crypto`, {
+  const res = await fetch(`${process.env.API_URL}`, {
     next: { revalidate: 1800 },
   });
 
   if (!res.ok) {
     // This will activate the closest `error.js` Error Boundary
-    throw new Error('Failed to fetch data')
+    throw new Error("Failed to fetch data");
   }
 
-  return res.json()
+  return res.json();
 }
 
 interface ExchangeData {
