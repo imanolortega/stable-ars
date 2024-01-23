@@ -2,6 +2,7 @@ import styles from "./home-sections.module.scss";
 import SelectedExchange from "@/components/selected-exchange/selected-exchange";
 import BestPrices from "@/components/best-prices/best-prices";
 import AveragePrices from "@/components/average-prices/average-prices";
+import { Suspense } from "react";
 
 interface HomeSectionsProps {
   average: any;
@@ -39,7 +40,7 @@ export default function HomeSections({
   ];
 
   return (
-    <>
+    <Suspense fallback={<h2>Loading...</h2>}>
       {homeSections.map((section) => (
         <section key={section.title}>
           <div className={styles["section-header"]}>
@@ -48,6 +49,6 @@ export default function HomeSections({
           {section.component}
         </section>
       ))}
-    </>
+    </Suspense>
   );
 }

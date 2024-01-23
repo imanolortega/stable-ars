@@ -5,6 +5,7 @@ import {
 } from "@/utils/crypto";
 import CryptoCard from "../crypto-card/crypto-card";
 import styles from "../../app/page.module.scss";
+import { Suspense } from "react";
 
 export default function BestPrices({
   currencies,
@@ -14,7 +15,8 @@ export default function BestPrices({
   data: any;
 }) {
   return (
-    <div className={styles["center"]}>
+    <Suspense fallback={<h2>Loading...</h2>}>
+      <div className={styles["center"]}>
       <div className={styles["grid"]}>
         {currencies.map((currency: any) => {
           const bestAsk = findBestAskPrice(data, currency);
@@ -35,5 +37,6 @@ export default function BestPrices({
         })}
       </div>
     </div>
+    </Suspense>
   );
 }

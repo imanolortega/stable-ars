@@ -1,8 +1,8 @@
-import styles from "./page.module.scss";
 import { calculateAverages, getCryptoData } from "@/utils/crypto";
-import Image from "next/image";
 import { formatTimestampToDateTime } from "@/utils/common";
 import HomeSections from "@/components/home-sections/home-sections";
+import Image from "next/image";
+import styles from "./page.module.scss";
 
 const blankSpace = <>&nbsp;</>;
 
