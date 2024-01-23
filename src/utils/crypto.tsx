@@ -40,16 +40,20 @@ export async function getCryptoCurrencies() {
 }
 
 export async function getCryptoData() {
-  const res = await fetch(`${process.env.API_URL}`, {
-    next: { revalidate: 1800 },
-  });
+  try {
+    const res = await fetch(`${process.env.API_URL}`, {
+      next: { revalidate: 1800 },
+    });
 
-  if (!res.ok) {
-    // This will activate the closest `error.js` Error Boundary
-    throw new Error("Failed to fetch data");
+    if (!res.ok) {
+      // This will activate the closest `error.js` Error Boundary
+      throw new Error("Failed to fetch data");
+    }
+
+    return res.json();
+  } catch (err) {
+    console.log(err);
   }
-
-  return res.json();
 }
 
 interface ExchangeData {
