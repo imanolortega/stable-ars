@@ -50,11 +50,10 @@ export async function getCryptoData() {
       throw new Error("Failed to fetch data");
     }
 
-    console.log('Success!')
-
     return res.json();
   } catch (err) {
-    console.log('Catch error!')
+    console.log("Catch error!");
+    console.log(`${process.env.API_URL}`);
     console.log(err);
   }
 }
