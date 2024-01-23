@@ -54,6 +54,7 @@ export async function getCryptoData() {
 
     return res.json();
   } catch (err) {
+    console.log('Catch error!')
     console.log(err);
   }
 }
