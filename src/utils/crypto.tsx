@@ -76,7 +76,7 @@ export function calculateAverages(data: any) {
     const bidPrices: number[] = [];
     const spreads: number[] = [];
 
-    data.forEach((exchange: any) => {
+    data?.forEach((exchange: any) => {
       const data = exchange.data[currency];
       if (data) {
         askPrices.push(data.ask);
@@ -110,7 +110,7 @@ export const findBestAskPrice = (
   let bestAskPrice = null;
   let bestAskValue = Infinity;
 
-  data.forEach((exchange) => {
+  data?.forEach((exchange) => {
     if (exchange.data[currency]) {
       const exchangeData = exchange.data[currency];
       if (exchangeData.ask < bestAskValue) {
@@ -133,7 +133,7 @@ export const findBestBidPrice = (
   let bestBidPrice = null;
   let bestBidValue = 0;
 
-  data.forEach((exchange) => {
+  data?.forEach((exchange) => {
     if (exchange.data[currency]) {
       const exchangeData = exchange.data[currency];
       if (exchangeData.bid > bestBidValue) {
@@ -156,7 +156,7 @@ export const findLowestSpread = (
   let lowestSpread = null;
   let lowestSpreadValue = Infinity;
 
-  data.forEach((exchange) => {
+  data?.forEach((exchange) => {
     if (exchange.data[currency]) {
       const exchangeData = exchange.data[currency];
       const spread = exchangeData.ask - exchangeData.bid;
