@@ -1,4 +1,8 @@
-import { calculateAverages, getCryptoData } from "@/utils/crypto";
+import {
+  calculateAverages,
+  getCryptoCurrencies,
+  getCryptoData,
+} from "@/utils/crypto";
 import { formatTimestampToDateTime } from "@/utils/common";
 import HomeSections from "@/components/home-sections/home-sections";
 import Image from "next/image";
@@ -7,7 +11,7 @@ import styles from "./page.module.scss";
 const blankSpace = <>&nbsp;</>;
 
 export default async function Home() {
-  const data = await getCryptoData();
+  const data = await getCryptoCurrencies();
   const currencies = ["dai", "usdc", "usdt"];
   const average = await calculateAverages(data);
   const lastUpdate = await formatTimestampToDateTime(data[0].data.dai.time);

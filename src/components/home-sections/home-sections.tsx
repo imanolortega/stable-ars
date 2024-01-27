@@ -7,13 +7,11 @@ import { Suspense } from "react";
 interface HomeSectionsProps {
   average: any;
   currencies: string[];
-  data: {
-    [currency: string]: {
-      ask: number;
-      bid: number;
-      time: number;
-    };
-  };
+  data: Array<{
+    exchange: string;
+    name: string;
+    data: Record<string, any>;
+  }>
 }
 
 export default function HomeSections({
