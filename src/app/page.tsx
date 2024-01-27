@@ -11,7 +11,7 @@ import styles from "./page.module.scss";
 const blankSpace = <>&nbsp;</>;
 
 export default async function Home() {
-  const data = await getCryptoCurrencies();
+  const data = await getCryptoData();
   const currencies = ["dai", "usdc", "usdt"];
   const average = await calculateAverages(data);
   const lastUpdate = await formatTimestampToDateTime(data[0].data.dai.time);
