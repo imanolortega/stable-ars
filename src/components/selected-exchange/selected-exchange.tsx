@@ -36,6 +36,7 @@ export default function SelectedExchange({
     <Suspense fallback={<h2>Loading...</h2>}>
       <label className={styles["select-wrapper"]}>
         <Select
+          aria-label={selectedExchange}
           value={selectedExchange}
           onChange={handleSelectChange}
           variant="outline"
