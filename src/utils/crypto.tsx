@@ -1,3 +1,5 @@
+import { REVALIDATE_HOME } from "./constants";
+
 export async function getCryptoCurrencies() {
   const exchangeNameMapping: Record<string, string> = {
     belo: "Belo",

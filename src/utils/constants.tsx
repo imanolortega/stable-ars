@@ -1,1 +1,1 @@
-const REVALIDATE_HOME = 5; //minutes
+export const REVALIDATE_HOME = 5; //minutes
