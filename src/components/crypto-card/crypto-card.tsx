@@ -51,27 +51,27 @@ export default function CryptoCard({
   return (
     <Suspense fallback={<h2>Loading...</h2>}>
       <div className={styles.card} style={cardStyle}>
-      <div className={styles["card-header"]}>
-        <div>{currencyIcons[currency]}</div>
-        <h3>{currency.toUpperCase()}</h3>
+        <div className={styles["card-header"]}>
+          <div>{currencyIcons[currency]}</div>
+          <h3>{currency.toUpperCase()}</h3>
+        </div>
+        <div className={styles["card-body"]}>
+          <p>
+            <span>Comprá a</span>${ask}
+            {askExchange && <span>en {askExchange}</span>}
+          </p>
+          <p>
+            <span>Vendé a</span>${bid}
+            {bidExchange && <span>en {bidExchange}</span>}
+          </p>
+        </div>
+        <div className={styles["card-footer"]}>
+          <p>
+            <span>Spread</span>${spread}
+            {spreadExchange && <span>en {spreadExchange}</span>}
+          </p>
+        </div>
       </div>
-      <div className={styles["card-body"]}>
-        <p>
-          <span>Comprá a</span>${ask}
-          {askExchange && <span>en {askExchange}</span>}
-        </p>
-        <p>
-          <span>Vendé a</span>${bid}
-          {bidExchange && <span>en {bidExchange}</span>}
-        </p>
-      </div>
-      <div className={styles["card-footer"]}>
-        <p>
-          <span>Spread</span>${spread}
-          {spreadExchange && <span>en {spreadExchange}</span>}
-        </p>
-      </div>
-    </div>
     </Suspense>
   );
 }

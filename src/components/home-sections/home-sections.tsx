@@ -11,7 +11,7 @@ interface HomeSectionsProps {
     exchange: string;
     name: string;
     data: Record<string, any>;
-  }>
+  }>;
 }
 
 export default function HomeSections({

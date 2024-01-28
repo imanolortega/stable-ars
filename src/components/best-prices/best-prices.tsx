@@ -17,26 +17,26 @@ export default function BestPrices({
   return (
     <Suspense fallback={<h2>Loading...</h2>}>
       <div className={styles["center"]}>
-      <div className={styles["grid"]}>
-        {currencies.map((currency: any) => {
-          const bestAsk = findBestAskPrice(data, currency);
-          const bestBid = findBestBidPrice(data, currency);
-          const lowestSpread = findLowestSpread(data, currency);
-          return (
-            <CryptoCard
-              key={currency}
-              currency={currency}
-              ask={`${bestAsk?.value}`}
-              askExchange={bestAsk?.exchange}
-              bid={`${bestBid?.value}`}
-              bidExchange={bestBid?.exchange}
-              spread={`${lowestSpread?.value}`}
-              spreadExchange={lowestSpread?.exchange}
-            />
-          );
-        })}
+        <div className={styles["grid"]}>
+          {currencies.map((currency: any) => {
+            const bestAsk = findBestAskPrice(data, currency);
+            const bestBid = findBestBidPrice(data, currency);
+            const lowestSpread = findLowestSpread(data, currency);
+            return (
+              <CryptoCard
+                key={currency}
+                currency={currency}
+                ask={`${bestAsk?.value}`}
+                askExchange={bestAsk?.exchange}
+                bid={`${bestBid?.value}`}
+                bidExchange={bestBid?.exchange}
+                spread={`${lowestSpread?.value}`}
+                spreadExchange={lowestSpread?.exchange}
+              />
+            );
+          })}
+        </div>
       </div>
-    </div>
     </Suspense>
   );
 }

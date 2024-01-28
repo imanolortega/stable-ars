@@ -42,19 +42,15 @@ export async function getCryptoCurrencies() {
 export async function getCryptoData() {
   try {
     const res = await fetch(`${process.env.API_URL}`, {
-      next: { revalidate: 1800 },
+      next: { revalidate: 60 * REVALIDATE_HOME },
     });
 
     if (!res.ok) {
-      // This will activate the closest `error.js` Error Boundary
       throw new Error("Failed to fetch data");
     }
 
-
     return res.json();
   } catch (err) {
-    console.log("Catch error!");
-    console.log(`${process.env.API_URL}`);
     console.log(err);
   }
 }
