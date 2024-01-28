@@ -1,6 +1,5 @@
 import {
   calculateAverages,
-  getCryptoCurrencies,
   getCryptoData,
 } from "@/utils/crypto";
 import { formatTimestampToDateTime } from "@/utils/common";
