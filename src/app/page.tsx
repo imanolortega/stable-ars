@@ -1,7 +1,4 @@
-import {
-  calculateAverages,
-  getCryptoData,
-} from "@/utils/crypto";
+import { calculateAverages, getCryptoData } from "@/utils/crypto";
 import { formatTimestampToDateTime } from "@/utils/common";
 import HomeSections from "@/components/home-sections/home-sections";
 import Image from "next/image";
