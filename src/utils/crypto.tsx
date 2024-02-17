@@ -46,7 +46,7 @@ export async function getCryptoCurrencies() {
 export async function getCryptoData() {
   try {
     const res = await fetch(`${process.env.API_URL}`, {
-      next: { revalidate: 60 * REVALIDATE_HOME },
+      cache: "no-store",
     });
 
     if (!res.ok) {
