@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en" data-theme="dark" style={{ colorScheme: "dark" }}>
       <link rel="icon" href="/favicon.ico" />
-      <body className={inter.className}>
+      <body>
         {children} <Analytics />
       </body>
     </html>

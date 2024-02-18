@@ -1,8 +1,11 @@
-import { calculateAverages, getCryptoData } from "@/utils/crypto";
 import { blankSpace, formatTimestampToDateTime } from "@/utils/common";
+import { calculateAverages, getCryptoData } from "@/utils/crypto";
+import { Inter } from "next/font/google";
 import HomeSections from "@/components/home-sections/home-sections";
 import Image from "next/image";
 import styles from "./page.module.scss";
+
+const inter = Inter({ subsets: ["latin"] });
 
 export default async function Home() {
   const data = await getCryptoData();
@@ -12,7 +15,7 @@ export default async function Home() {
 
   return (
     <>
-      <main className={styles["main"]}>
+      <main className={`${styles["main"]} ${inter.className}`}>
         <header className={styles["header"]}>
           <h1 style={{ opacity: 0, position: "absolute" }}>
             Stablecoins en Argentina
