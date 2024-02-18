@@ -1,5 +1,7 @@
 import moment from "moment-timezone";
 
+export const blankSpace = <>&nbsp;</>;
+
 function capitalizeFirstLetter(text: string) {
   return text.charAt(0).toUpperCase() + text.slice(1);
 }

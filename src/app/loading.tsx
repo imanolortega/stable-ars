@@ -1,15 +1,9 @@
-import { calculateAverages, getCryptoData } from "@/utils/crypto";
-import { blankSpace, formatTimestampToDateTime } from "@/utils/common";
-import HomeSections from "@/components/home-sections/home-sections";
+import "./globals.css";
 import Image from "next/image";
 import styles from "./page.module.scss";
+import { blankSpace } from "@/utils/common";
 
-export default async function Home() {
-  const data = await getCryptoData();
-  const currencies = ["dai", "usdc", "usdt"];
-  const average = await calculateAverages(data);
-  const lastUpdate = await formatTimestampToDateTime(data[0].data.dai.time);
-
+export default function Loading() {
   return (
     <>
       <main className={styles["main"]}>
@@ -27,13 +21,12 @@ export default async function Home() {
             <p>STABLEARS</p>
           </div>
           <div className={styles["data"]}>
-            <p>Última actualización {lastUpdate}</p>
+            <p>Actualizando...</p>
           </div>
         </header>
-        <HomeSections average={average} currencies={currencies} data={data} />
       </main>
       <footer className={styles["footer"]}>
-        <p>Última actualización {lastUpdate}.</p>
+        <p>Actualizando...</p>
         <p>
           Datos obtenidos a través de la API de{blankSpace}
           <a
@@ -45,7 +38,6 @@ export default async function Home() {
             CriptoYa.
           </a>
         </p>
-
         <p>
           {blankSpace}Web por{blankSpace}
           <a

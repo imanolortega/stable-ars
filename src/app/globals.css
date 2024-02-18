@@ -13,7 +13,7 @@
   --tw-bg-opacity-medium: 0.5;
   --tw-bg-opacity-full: 1;
 
-  --blue-gray-bg: #2D3748;
+  --blue-gray-bg: #1e2735;
   --argentina-bluesky: #75aadb;
 
   --primary-glow: radial-gradient(rgba(1, 65, 255, 0.4), rgba(1, 65, 255, 0));
@@ -50,6 +50,7 @@
 
 html {
   color-scheme: dark;
+  font-family: 'Inter', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 html,

@@ -2,7 +2,6 @@ import styles from "./home-sections.module.scss";
 import SelectedExchange from "@/components/selected-exchange/selected-exchange";
 import BestPrices from "@/components/best-prices/best-prices";
 import AveragePrices from "@/components/average-prices/average-prices";
-import { Suspense } from "react";
 
 interface HomeSectionsProps {
   average: any;
