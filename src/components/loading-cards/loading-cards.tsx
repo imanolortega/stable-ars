@@ -1,7 +1,7 @@
 import LoadingCard from "../crypto-card/loading-card/loading-card";
 import styles from "../selected-exchange/selected-exchange.module.scss";
 
-export default function LoadingCards({ select }: { select: boolean }) {
+export default function LoadingCards({ select }: { select?: boolean }) {
   const cards = ["dai", "usdc", "usdt"];
   return (
     <>

@@ -7,7 +7,7 @@ export default function LoadingCard({ currency }: { currency: string }) {
     "--primary-glow": primaryGlowColor,
   } as React.CSSProperties;
   return (
-    <div className={styles.card} style={cardStyle}>
+    <div className={`${styles["card"]} ${styles["loading"]}`} style={cardStyle}>
       <div className={styles["card-header"]}>
         <div>{currencyIcons[currency]}</div>
         <h3>{currency.toUpperCase()}</h3>
