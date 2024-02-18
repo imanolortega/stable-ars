@@ -10,6 +10,10 @@
   --background-start-rgb: 0, 0, 0;
   --background-end-rgb: 0, 0, 0;
 
+  --tw-bg-opacity-medium: 0.5;
+  --tw-bg-opacity-full: 1;
+
+  --blue-gray-bg: #2D3748;
   --argentina-bluesky: #75aadb;
 
   --primary-glow: radial-gradient(rgba(1, 65, 255, 0.4), rgba(1, 65, 255, 0));
@@ -44,6 +48,10 @@
   margin: 0;
 }
 
+html {
+  color-scheme: dark;
+}
+
 html,
 body {
   max-width: 100vw;
@@ -52,19 +60,10 @@ body {
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: var(--blue-gray-bg);
 }
 
 a {
   color: inherit;
   text-decoration: none;
-}
-
-html {
-  color-scheme: dark;
 }

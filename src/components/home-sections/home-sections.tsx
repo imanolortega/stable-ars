@@ -38,7 +38,7 @@ export default function HomeSections({
   ];
 
   return (
-    <Suspense fallback={<h2>Loading...</h2>}>
+    <>
       {homeSections.map((section) => (
         <section key={section.title}>
           <div className={styles["section-header"]}>
@@ -47,6 +47,6 @@ export default function HomeSections({
           {section.component}
         </section>
       ))}
-    </Suspense>
+    </>
   );
 }

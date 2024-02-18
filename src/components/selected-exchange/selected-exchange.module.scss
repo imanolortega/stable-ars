@@ -5,7 +5,9 @@
   select {
     font-family: inherit;
     border: 1px solid rgba(var(--card-border-rgb), 0.15);
-    background-color: black;
+    border-radius: 0.5rem;
+    padding: 0.3rem 0.5rem;
+    background-color: var(--blue-gray-bg);
 
     option {
       font-family: system-ui, sans-serif;

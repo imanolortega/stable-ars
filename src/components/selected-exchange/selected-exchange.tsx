@@ -35,18 +35,17 @@ export default function SelectedExchange({
   return (
     <>
       <label className={styles["select-wrapper"]}>
-        <Select
+        <select
           aria-label={selectedExchange}
           value={selectedExchange}
           onChange={handleSelectChange}
-          variant="outline"
         >
           {data.map((exchange: any) => (
             <option key={exchange.name} value={exchange.name}>
               {exchange.name}
             </option>
           ))}
-        </Select>
+        </select>
       </label>
       <div className={styles["center"]}>
         <div className={styles["grid"]}>

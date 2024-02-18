@@ -1,8 +1,8 @@
-import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
-import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/react";
 import { Inter } from "next/font/google";
 import { Providers } from "./providers";
+import type { Metadata } from "next";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,9 +21,7 @@ export default function RootLayout({
     <html lang="en" data-theme="dark" style={{ colorScheme: "dark" }}>
       <link rel="icon" href="/favicon.ico" />
       <body className={inter.className}>
-        <Providers>
-          {children} <Analytics />
-        </Providers>
+        {children} <Analytics />
       </body>
     </html>
   );
