@@ -2,7 +2,6 @@
 import { useEffect, useState } from "react";
 import styles from "./selected-exchange.module.scss";
 import CryptoCard from "../crypto-card/crypto-card";
-import { Select } from "@chakra-ui/react";
 
 export default function SelectedExchange({
   currencies,

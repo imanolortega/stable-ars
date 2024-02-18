@@ -1,22 +1,12 @@
 import styles from "./home-sections.module.scss";
 import LoadingCards from "../loading-cards/loading-cards";
 
-interface HomeSectionsProps {
-  average: any;
-  currencies: string[];
-  data: Array<{
-    exchange: string;
-    name: string;
-    data: Record<string, any>;
-  }>;
-}
-
 export default function LoadingHomeSections() {
   const homeSections = [
     {
       title: "Cotizaciones por exchange",
       classNameTitle: styles["selected-exchange-title"],
-      component: <LoadingCards />,
+      component: <LoadingCards select />,
     },
     {
       title: "Promedio de cotizaciones",
