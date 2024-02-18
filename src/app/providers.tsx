@@ -7,7 +7,9 @@ import { ChakraProvider } from "@chakra-ui/react";
 export function Providers({ children }: { children: React.ReactNode }) {
   return (
     <CacheProvider>
-      <ChakraProvider theme={theme} resetCSS={false} disableGlobalStyle={true}>{children}</ChakraProvider>
+      <ChakraProvider theme={theme} resetCSS={false} disableGlobalStyle={true}>
+        {children}
+      </ChakraProvider>
     </CacheProvider>
   );
 }

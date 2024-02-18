@@ -13,7 +13,7 @@ interface CryptoCardProps {
   spreadExchange?: string;
 }
 
-const colorMap: any = {
+export const colorMap: any = {
   dai: {
     primaryGlowColor:
       "conic-gradient(from 180deg at 50% 50%, #ffff0044 0deg, #ffcc0033 55deg, #d4ff0040 120deg, #99ff0044 160deg, transparent 360deg)",
@@ -28,6 +28,12 @@ const colorMap: any = {
   },
 };
 
+export const currencyIcons: Record<string, any> = {
+  dai: <Dai />,
+  usdc: <Usdc />,
+  usdt: <Usdt />,
+};
+
 export default function CryptoCard({
   ask,
   askExchange,
@@ -37,20 +43,12 @@ export default function CryptoCard({
   spread,
   spreadExchange,
 }: CryptoCardProps) {
-  const currencyIcons: Record<string, any> = {
-    dai: <Dai />,
-    usdc: <Usdc />,
-    usdt: <Usdt />,
-  };
-
   const { primaryGlowColor } = colorMap[currency] || {};
-
   const cardStyle = {
     "--primary-glow": primaryGlowColor,
   } as React.CSSProperties;
-
   return (
-    <Suspense fallback={<LoadingCard />}>
+    <Suspense fallback={<LoadingCard currency={currency} />}>
       <div className={styles.card} style={cardStyle}>
         <div className={styles["card-header"]}>
           <div>{currencyIcons[currency]}</div>

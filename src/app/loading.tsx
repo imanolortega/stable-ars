@@ -1,12 +1,16 @@
 import "./globals.css";
-import Image from "next/image";
-import styles from "./page.module.scss";
 import { blankSpace } from "@/utils/common";
+import { Inter } from "next/font/google";
+import Image from "next/image";
+import LoadingHomeSections from "@/components/home-sections/loading-home-sections";
+import styles from "./page.module.scss";
+
+const inter = Inter({ subsets: ["latin"] });
 
 export default function Loading() {
   return (
     <>
-      <main className={styles["main"]}>
+      <main className={`${styles["main"]} ${inter.className}`}>
         <header className={styles["header"]}>
           <h1 style={{ opacity: 0, position: "absolute" }}>
             Stablecoins en Argentina
@@ -24,6 +28,7 @@ export default function Loading() {
             <p>Actualizando...</p>
           </div>
         </header>
+        <LoadingHomeSections />
       </main>
       <footer className={styles["footer"]}>
         <p>Actualizando...</p>
