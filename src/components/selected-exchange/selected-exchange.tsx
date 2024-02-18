@@ -1,5 +1,5 @@
 "use client";
-import React, { Suspense, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./selected-exchange.module.scss";
 import CryptoCard from "../crypto-card/crypto-card";
 import { Select } from "@chakra-ui/react";
@@ -33,7 +33,7 @@ export default function SelectedExchange({
   };
 
   return (
-    <Suspense fallback={<h2>Loading...</h2>}>
+    <>
       <label className={styles["select-wrapper"]}>
         <Select
           aria-label={selectedExchange}
@@ -68,6 +68,6 @@ export default function SelectedExchange({
           ))}
         </div>
       </div>
-    </Suspense>
+    </>
   );
 }

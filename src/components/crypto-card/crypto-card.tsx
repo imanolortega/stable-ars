@@ -1,6 +1,7 @@
 import { Dai, Usdc, Usdt } from "./icons/icons";
 import { Suspense } from "react";
 import styles from "./card.module.scss";
+import LoadingCard from "./loading-card/loading-card";
 
 interface CryptoCardProps {
   ask: string;
@@ -49,7 +50,7 @@ export default function CryptoCard({
   } as React.CSSProperties;
 
   return (
-    <Suspense fallback={<h2>Loading...</h2>}>
+    <Suspense fallback={<LoadingCard />}>
       <div className={styles.card} style={cardStyle}>
         <div className={styles["card-header"]}>
           <div>{currencyIcons[currency]}</div>
