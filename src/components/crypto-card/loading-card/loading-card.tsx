@@ -14,15 +14,15 @@ export default function LoadingCard({ currency }: { currency: string }) {
       </div>
       <div className={styles["card-body"]}>
         <p>
-          <span>Comprá a</span>$0
+          <span>Comprá a</span>...
         </p>
         <p>
-          <span>Vendé a</span>$0
+          <span>Vendé a</span>...
         </p>
       </div>
       <div className={styles["card-footer"]}>
         <p>
-          <span>Spread</span>$0
+          <span>Spread</span>...
         </p>
       </div>
     </div>
