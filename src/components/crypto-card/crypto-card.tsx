@@ -1,7 +1,5 @@
 import { Dai, Usdc, Usdt } from "./icons/icons";
-import { Suspense } from "react";
 import styles from "./card.module.scss";
-import LoadingCard from "./loading-card/loading-card";
 
 interface CryptoCardProps {
   ask: string;
@@ -48,29 +46,27 @@ export default function CryptoCard({
     "--primary-glow": primaryGlowColor,
   } as React.CSSProperties;
   return (
-    <Suspense fallback={<LoadingCard currency={currency} />}>
-      <div className={styles.card} style={cardStyle}>
-        <div className={styles["card-header"]}>
-          <div>{currencyIcons[currency]}</div>
-          <h3>{currency.toUpperCase()}</h3>
-        </div>
-        <div className={styles["card-body"]}>
-          <p>
-            <span>Comprá a</span>${ask}
-            {askExchange && <span>en {askExchange}</span>}
-          </p>
-          <p>
-            <span>Vendé a</span>${bid}
-            {bidExchange && <span>en {bidExchange}</span>}
-          </p>
-        </div>
-        <div className={styles["card-footer"]}>
-          <p>
-            <span>Spread</span>${spread}
-            {spreadExchange && <span>en {spreadExchange}</span>}
-          </p>
-        </div>
+    <div className={styles.card} style={cardStyle}>
+      <div className={styles["card-header"]}>
+        <div>{currencyIcons[currency]}</div>
+        <h3>{currency.toUpperCase()}</h3>
       </div>
-    </Suspense>
+      <div className={styles["card-body"]}>
+        <p>
+          <span>Comprá a</span>${ask}
+          {askExchange && <span>en {askExchange}</span>}
+        </p>
+        <p>
+          <span>Vendé a</span>${bid}
+          {bidExchange && <span>en {bidExchange}</span>}
+        </p>
+      </div>
+      <div className={styles["card-footer"]}>
+        <p>
+          <span>Spread</span>${spread}
+          {spreadExchange && <span>en {spreadExchange}</span>}
+        </p>
+      </div>
+    </div>
   );
 }
