@@ -8,8 +8,8 @@ export default function LoadingCards({ select }: { select?: boolean }) {
       {select && (
         <div className={styles["select-header"]}>
           <label className={styles["select-wrapper"]}>
-            <select aria-label="select-loader" value="loading">
-              <option value="dummy-value">Actualizando...</option>
+            <select aria-label="select-loader">
+              <option>Actualizando...</option>
             </select>
           </label>
         </div>
