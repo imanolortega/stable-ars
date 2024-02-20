@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import styles from "./selected-exchange.module.scss";
 import CryptoCard from "../crypto-card/crypto-card";
+import Image from "next/image";
 
 export default function SelectedExchange({
   currencies,
@@ -33,19 +34,39 @@ export default function SelectedExchange({
 
   return (
     <>
-      <label className={styles["select-wrapper"]}>
-        <select
-          aria-label={selectedExchange}
-          value={selectedExchange}
-          onChange={handleSelectChange}
+      <div className={styles["select-header"]}>
+        <label className={styles["select-wrapper"]}>
+          <select
+            aria-label={selectedExchange}
+            value={selectedExchange}
+            onChange={handleSelectChange}
+          >
+            {data.map((exchange: any) => (
+              <option
+                className={styles["option"]}
+                key={exchange.name}
+                value={exchange.name}
+              >
+                {exchange.name}
+              </option>
+            ))}
+          </select>
+        </label>
+        <a
+          href={selectedExchangeData.url}
+          target="_blank"
+          rel="noopener"
+          className={styles["buy-exchange"]}
         >
-          {data.map((exchange: any) => (
-            <option key={exchange.name} value={exchange.name}>
-              {exchange.name}
-            </option>
-          ))}
-        </select>
-      </label>
+          <span>Comprar en {selectedExchange} </span>
+          <Image
+            alt={selectedExchangeData.name}
+            src={`/${selectedExchangeData.exchange}.webp`}
+            height={20}
+            width={20}
+          />
+        </a>
+      </div>
       <div className={styles["center"]}>
         <div className={styles["grid"]}>
           {currencies.map((currency) => (

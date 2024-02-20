@@ -6,11 +6,13 @@ export default function LoadingCards({ select }: { select?: boolean }) {
   return (
     <>
       {select && (
-        <label className={styles["select-wrapper"]}>
-          <select aria-label="select-loader" value="loading">
-            <option value="dummy-value">Actualizando...</option>
-          </select>
-        </label>
+        <div className={styles["select-header"]}>
+          <label className={styles["select-wrapper"]}>
+            <select aria-label="select-loader" value="loading">
+              <option value="dummy-value">Actualizando...</option>
+            </select>
+          </label>
+        </div>
       )}
       <div className={styles["center"]}>
         <div className={styles["grid"]}>

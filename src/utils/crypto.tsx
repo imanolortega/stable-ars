@@ -1,16 +1,22 @@
-import { REVALIDATE_HOME } from "./constants";
-
 export async function getCryptoCurrencies() {
-  const exchangeNameMapping: Record<string, string> = {
-    belo: "Belo",
-    buenbit: "BuenBit",
-    bybit: "ByBit",
-    fiwind: "FiWind",
-    lemoncash: "Lemon Cash",
-    letsbit: "LetsBit",
-    ripio: "Ripio",
-    satoshitango: "Satoshi Tango",
-    tiendacrypto: "Tienda Crypto",
+  interface Exchange {
+    name: string;
+    url: string;
+  }
+
+  const exchangeNameMapping: Record<string, Exchange> = {
+    belo: { name: "Belo", url: "https://www.belo.app/" },
+    buenbit: { name: "BuenBit", url: "https://buenbit.com/" },
+    bybit: { name: "ByBit", url: "https://www.bybit.com/" },
+    fiwind: { name: "FiWind", url: "https://www.fiwind.io/" },
+    lemoncash: { name: "Lemon Cash", url: "https://www.lemon.me/" },
+    letsbit: { name: "LetsBit", url: "https://letsbit.io/" },
+    ripio: { name: "Ripio", url: "https://www.ripio.com/" },
+    satoshitango: {
+      name: "Satoshi Tango",
+      url: "https://www.satoshitango.com/",
+    },
+    tiendacrypto: { name: "Tienda Crypto", url: "https://tiendacrypto.com/" },
   };
 
   const exchanges = Object.keys(exchangeNameMapping);
@@ -20,6 +26,7 @@ export async function getCryptoCurrencies() {
   const allStableCoins: Array<{
     exchange: string;
     name: string;
+    url: string;
     data: Record<string, any>;
   }> = [];
 
@@ -35,9 +42,10 @@ export async function getCryptoCurrencies() {
       exchangeData[coin] = data;
     }
 
-    const name = exchangeNameMapping[exchange];
+    const name = exchangeNameMapping[exchange].name;
+    const url = exchangeNameMapping[exchange].url;
 
-    allStableCoins.push({ exchange, name, data: exchangeData });
+    allStableCoins.push({ exchange, name, url, data: exchangeData });
   }
 
   return allStableCoins;
