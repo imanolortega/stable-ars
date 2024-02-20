@@ -8,6 +8,7 @@
     align-items: center;
     justify-content: space-between;
     gap: 0.5rem;
+    border-bottom: 1px solid rgba(var(--card-border-rgb), 0.50);
 
     span {
       font-weight: 400;
