@@ -58,7 +58,7 @@ export default function SelectedExchange({
           rel="noopener"
           className={styles["buy-exchange"]}
         >
-          <span>Comprar en {selectedExchange} </span>
+          <span>Comprar y vender en {selectedExchange} </span>
           <Image
             alt={selectedExchangeData.name}
             src={`/${selectedExchangeData.exchange}.webp`}

@@ -1,6 +1,7 @@
 .select-header {
   display: flex;
   justify-content: space-between;
+  gap: 1.5rem;
 
   .buy-exchange {
     display: flex;
@@ -14,6 +15,15 @@
 
     img {
       border-radius: 50%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+
+    .buy-exchange {
+      justify-content: center;
+      gap: 0.5rem;
     }
   }
 
