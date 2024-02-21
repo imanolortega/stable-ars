@@ -18,8 +18,7 @@ export default async function Header() {
         />
         <p>STABLEARS</p>
       </div>
-      <div className={styles["data"]}>
-      </div>
+      <div className={styles["data"]}></div>
     </header>
   );
 }

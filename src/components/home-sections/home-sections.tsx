@@ -26,19 +26,19 @@ export default async function HomeSections({
       title: "Cotizaciones por exchange",
       classNameTitle: styles["selected-exchange-title"],
       component: <SelectedExchange currencies={currencies} data={data} />,
-      isFirstSection: true
+      isFirstSection: true,
     },
     {
       title: "Promedio de cotizaciones",
       classNameTitle: "",
       component: <AveragePrices currencies={currencies} average={average} />,
-      isFirstSection: false
+      isFirstSection: false,
     },
     {
       title: "Mejores cotizaciones",
       classNameTitle: "",
       component: <BestPrices currencies={currencies} data={data} />,
-      isFirstSection: false
+      isFirstSection: false,
     },
   ];
 
@@ -48,7 +48,11 @@ export default async function HomeSections({
         <section key={section.title}>
           <div className={styles["section-header"]}>
             <h2 className={section.classNameTitle}>{section.title}</h2>
-            {section.isFirstSection && <p className={styles['date']}>Última actualización {lastUpdate}</p>}
+            {section.isFirstSection && (
+              <p className={styles["date"]}>
+                Última actualización {lastUpdate}
+              </p>
+            )}
           </div>
           {section.component}
         </section>

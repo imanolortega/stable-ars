@@ -14,9 +14,7 @@ export default async function Home() {
 
   return (
     <>
-      <main className={`${styles["main"]} ${inter.className}`}>
-
-      </main>
+      <main className={`${styles["main"]} ${inter.className}`}></main>
     </>
   );
 }
