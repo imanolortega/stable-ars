@@ -29,6 +29,11 @@
     .buy-exchange {
       justify-content: center;
       gap: 0.5rem;
+      text-decoration: underline;
+
+      span {
+        font-size: 0.9rem;
+      }
     }
   }
 

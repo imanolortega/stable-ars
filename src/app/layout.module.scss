@@ -1,0 +1,72 @@
+.header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 4rem 4rem 0rem 4rem;
+
+  @media (max-width: 700px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  h1 {
+    text-align: left;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 700;
+  }
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6rem;
+  min-height: 100vh;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.8rem;
+  margin-bottom: 2rem;
+
+  div {
+    display: flex;
+    align-items: center;
+    text-align: center;
+  }
+
+  p {
+    opacity: 0.7;
+  }
+
+  .link {
+    color: var(--argentina-bluesky);
+    opacity: 1;
+    text-decoration: underline;
+  }
+
+}
+
+@media (min-width: 701px) and (max-width: 1120px) {
+  .main {
+    padding: 4rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .main {
+    padding: 2rem;
+  }
+}

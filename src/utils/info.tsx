@@ -48,7 +48,7 @@ export const USDC = (
 
 export const USDT = (
   <>
-    USDT, también conocida como "Tether", es otra criptomoneda estable vinculada
+    USDT, también conocida como &quot;Tether&quot;, es otra criptomoneda estable vinculada
     al dólar estadounidense. Al igual que DAI y USDC, USDT está diseñado para
     mantener un valor estable en relación con el dólar estadounidense.
     <br />
