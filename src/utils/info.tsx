@@ -1,6 +1,6 @@
 export const ABOUT = (
   <>
-    Las stablecoins son una forma de criptomoneda diseñada para mantener un
+    Las stablecoins son un tipo de criptomoneda diseñada para mantener un
     valor estable, en contraste con la volatilidad comúnmente asociada con otras
     criptomonedas como Bitcoin y Ethereum. Estas criptomonedas están respaldadas
     por activos estables, como monedas fiduciarias (por ejemplo, dólares
@@ -19,7 +19,7 @@ export const ABOUT = (
     facilitar transacciones rápidas y eficientes, así como para proporcionar una
     forma de protegerse contra la volatilidad del mercado de criptomonedas sin
     tener que recurrir a las monedas fiduciarias tradicionales. También son
-    útiles para los traders que desean mantener su valor en un activo digital
+    útiles para aquellos que desean mantener su valor en un activo digital
     sin verse afectados por los grandes movimientos de precios asociados con
     otras criptomonedas más volátiles.
   </>
