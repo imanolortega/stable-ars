@@ -1,7 +1,7 @@
 export const ABOUT = (
   <>
-    Las stablecoins son un tipo de criptomoneda diseñada para mantener un
-    valor estable, en contraste con la volatilidad comúnmente asociada con otras
+    Las stablecoins son un tipo de criptomoneda diseñada para mantener un valor
+    estable, en contraste con la volatilidad comúnmente asociada con otras
     criptomonedas como Bitcoin y Ethereum. Estas criptomonedas están respaldadas
     por activos estables, como monedas fiduciarias (por ejemplo, dólares
     estadounidenses, euros, etc.), metales preciosos o incluso otras
@@ -19,19 +19,20 @@ export const ABOUT = (
     facilitar transacciones rápidas y eficientes, así como para proporcionar una
     forma de protegerse contra la volatilidad del mercado de criptomonedas sin
     tener que recurrir a las monedas fiduciarias tradicionales. También son
-    útiles para aquellos que desean mantener su valor en un activo digital
-    sin verse afectados por los grandes movimientos de precios asociados con
-    otras criptomonedas más volátiles.
+    útiles para aquellos que desean mantener su valor en un activo digital sin
+    verse afectados por los grandes movimientos de precios asociados con otras
+    criptomonedas más volátiles.
   </>
 );
 
 export const DAI = (
   <>
     DAI es una criptomoneda estable descentralizada que está vinculada al valor
-    del dólar estadounidense. Fue desarrollada por MakerDAO, una organización
-    descentralizada que opera en la plataforma Ethereum. La estabilidad de DAI
-    se mantiene a través de un sistema de contratos inteligentes y activos
-    colaterales dentro de la red Ethereum.
+    del dólar estadounidense. El valor de un DAI es igual al valor de un dólar.
+    Fue desarrollada por MakerDAO, una organización descentralizada que opera en
+    la plataforma Ethereum. La estabilidad de DAI se mantiene a través de un
+    sistema de contratos inteligentes y activos colaterales dentro de la red
+    Ethereum.
     <br />
     <br />
     El proceso funciona de la siguiente manera: los usuarios bloquean activos
@@ -55,7 +56,8 @@ export const USDC = (
     USDC, que significa &quot;USD Coin&quot;, es otra criptomoneda estable
     vinculada al dólar estadounidense. Al igual que DAI, USDC está diseñada para
     mantener un valor estable en relación con el dólar estadounidense, pero
-    difiere en algunos aspectos fundamentales.
+    difiere en algunos aspectos fundamentales. El valor de un USDC es igual al
+    valor de un dólar.
     <br />
     <br />
     USDC fue creado a través de una colaboración entre Circle y Coinbase, dos
@@ -81,7 +83,7 @@ export const USDT = (
     USDT, también conocida como &quot;Tether&quot;, es otra criptomoneda estable
     vinculada al dólar estadounidense. Al igual que DAI y USDC, USDT está
     diseñado para mantener un valor estable en relación con el dólar
-    estadounidense.
+    estadounidense. El valor de un USDT es igual al valor de un dólar.
     <br />
     <br />
     Sin embargo, a diferencia de DAI y USDC, que tienen diferentes estructuras y
