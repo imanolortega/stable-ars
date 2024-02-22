@@ -1,3 +1,30 @@
+export const ABOUT = (
+  <>
+    Las stablecoins son una forma de criptomoneda diseñada para mantener un
+    valor estable, en contraste con la volatilidad comúnmente asociada con otras
+    criptomonedas como Bitcoin y Ethereum. Estas criptomonedas están respaldadas
+    por activos estables, como monedas fiduciarias (por ejemplo, dólares
+    estadounidenses, euros, etc.), metales preciosos o incluso otras
+    criptomonedas.
+    <br />
+    <br />
+    La estabilidad se logra manteniendo reservas adecuadas de los activos
+    respaldados en reserva para respaldar el valor de la stablecoin en
+    circulación. Por lo tanto, cada unidad de una stablecoin se supone que tiene
+    un valor equivalente al activo subyacente o a una combinación de activos
+    subyacentes.
+    <br />
+    <br />
+    Las stablecoins se utilizan comúnmente en el mundo de las criptomonedas para
+    facilitar transacciones rápidas y eficientes, así como para proporcionar una
+    forma de protegerse contra la volatilidad del mercado de criptomonedas sin
+    tener que recurrir a las monedas fiduciarias tradicionales. También son
+    útiles para los traders que desean mantener su valor en un activo digital
+    sin verse afectados por los grandes movimientos de precios asociados con
+    otras criptomonedas más volátiles.
+  </>
+);
+
 export const DAI = (
   <>
     DAI es una criptomoneda estable descentralizada que está vinculada al valor
@@ -6,11 +33,13 @@ export const DAI = (
     se mantiene a través de un sistema de contratos inteligentes y activos
     colaterales dentro de la red Ethereum.
     <br />
+    <br />
     El proceso funciona de la siguiente manera: los usuarios bloquean activos
     como Ethereum en un contrato inteligente de MakerDAO y reciben DAI a cambio.
     Estos activos bloqueados actúan como garantía, y si el valor de DAI cae por
     debajo de 1 dólar, el sistema puede liquidar automáticamente parte de los
     activos bloqueados para mantener la estabilidad del valor de DAI.
+    <br />
     <br />
     DAI se utiliza principalmente como una forma de estabilidad dentro del
     ecosistema de las criptomonedas, permitiendo a los usuarios mantener valor
@@ -28,6 +57,7 @@ export const USDC = (
     mantener un valor estable en relación con el dólar estadounidense, pero
     difiere en algunos aspectos fundamentales.
     <br />
+    <br />
     USDC fue creado a través de una colaboración entre Circle y Coinbase, dos
     empresas prominentes en el espacio de las criptomonedas. A diferencia de
     DAI, que se mantiene mediante un sistema descentralizado de contratos
@@ -35,8 +65,8 @@ export const USDC = (
     por reservas de dólares estadounidenses mantenidas en cuentas bancarias
     reguladas y auditadas por terceros. Esto significa que la emisión y la
     circulación de USDC están más centralizadas en comparación con DAI.
-    <br />A pesar de estas diferencias en el enfoque técnico, tanto DAI como
-    USDC se utilizan ampliamente en el espacio de las criptomonedas para
+    <br /> <br />A pesar de estas diferencias en el enfoque técnico, tanto DAI
+    como USDC se utilizan ampliamente en el espacio de las criptomonedas para
     proporcionar estabilidad de precios y facilitar transacciones y
     transferencias de valor sin la volatilidad asociada con otras criptomonedas
     más tradicionales como Bitcoin o Ethereum. Los usuarios pueden utilizar USDC
@@ -53,6 +83,7 @@ export const USDT = (
     diseñado para mantener un valor estable en relación con el dólar
     estadounidense.
     <br />
+    <br />
     Sin embargo, a diferencia de DAI y USDC, que tienen diferentes estructuras y
     enfoques para mantener su estabilidad, USDT se diferencia en su método de
     respaldo. USDT fue el primero en introducir el concepto de criptomoneda
@@ -61,6 +92,7 @@ export const USDT = (
     bancaria. Sin embargo, la transparencia y la verificación de estas reservas
     han sido objeto de debate y controversia en el pasado.
     <br />
+    <br />
     A pesar de esto, USDT se ha convertido en una de las criptomonedas estables
     más populares y ampliamente utilizadas en el mercado de las criptomonedas.
     Se utiliza en una variedad de casos de uso, incluyendo el comercio de
@@ -68,6 +100,7 @@ export const USDT = (
     períodos de volatilidad del mercado, y para facilitar transferencias de
     valor rápidas y eficientes entre diferentes exchanges y billeteras
     digitales.
+    <br />
     <br />
     Es importante tener en cuenta que, debido a la controversia sobre la
     transparencia de las reservas de USDT, algunos usuarios y empresas prefieren
