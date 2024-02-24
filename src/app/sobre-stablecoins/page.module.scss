@@ -39,6 +39,32 @@
     width: 100%;
     flex-direction: column;
 
+    .breadcrumb {
+      margin-bottom: 1rem;
+
+
+      ol {
+        display: flex;
+        list-style: none;
+      }
+
+      li {
+        margin-right: 0.5rem;
+      }
+
+      a {
+        opacity: 0.7;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+
+      span {
+        opacity: 0.7;
+      }
+    }
+
     .header {
       margin-bottom: 2rem;
       h1 {
