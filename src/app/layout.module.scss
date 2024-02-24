@@ -27,10 +27,14 @@
   .navbar {
     li {
       font-size: 0.9rem;
-      opacity: 0.8rem;
+      opacity: 0.8;
       font-weight: 500;
       list-style: none;
       text-transform: uppercase;
+    }
+
+    @media (max-width: 700px) {
+      display: none;
     }
   }
 }
