@@ -1,0 +1,42 @@
+.aside {
+  display: none;
+  flex-direction: column;
+  padding: 1rem;
+
+  h3 {
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  li {
+    margin-bottom: 0.5rem;
+    opacity: 0.7;
+  }
+
+  &.fixedAside {
+    display: flex;
+    position: fixed;
+    top: 50px;
+    transition: top 0.3s ease;
+
+    @media (max-width: 700px) {
+      display: none;
+    }
+
+    @media screen and (min-width: 1400px) {
+      left: 130px;
+    }
+
+    @media screen and (min-width: 1800px) {
+      left: 250px;
+    }
+  }
+}
+
+.visible {
+  top: 0;
+}

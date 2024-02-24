@@ -51,6 +51,7 @@
 html {
   color-scheme: dark;
   font-family: 'Inter', Tahoma, Geneva, Verdana, sans-serif;
+  scroll-behavior: smooth;
 }
 
 html,
