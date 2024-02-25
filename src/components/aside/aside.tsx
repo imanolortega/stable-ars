@@ -4,28 +4,13 @@ import { cryptoInfo } from "@/utils/info";
 import Link from "next/link";
 import ScrollTop from "../scroll-top/scroll-top";
 import styles from "./aside.module.scss";
+import useScrollVisibility from "@/hooks/useScrollVisibility";
 
 export default function Aside() {
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop =
-        window.pageYOffset || document.documentElement.scrollTop;
-      setIsVisible(scrollTop > 300);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  const isVisible = useScrollVisibility(300);
 
   return (
-    <aside
-      className={`${styles["aside"]} ${isVisible ? styles["fixedAside"] : ""}`}
-    >
+    <aside className={`${styles["aside"]} ${isVisible ? styles["fixed"] : ""}`}>
       <h3>Contenido</h3>
       <ul>
         <li>

@@ -5,6 +5,8 @@ import Header from "@/components/header/header";
 import Footer from "@/components/footer/footer";
 import styles from "./layout.module.scss";
 import { Inter } from "next/font/google";
+import ScrollTop from "@/components/scroll-top/scroll-top";
+import ArrowBtn from "@/components/arrow-btn/arrow-btn";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -22,6 +24,7 @@ export default function RootLayout({
     <html lang="en" data-theme="dark" style={{ colorScheme: "dark" }}>
       <link rel="icon" href="/favicon.ico" />
       <body>
+        <ArrowBtn />
         <Header />
         <main className={`${styles["main"]} ${inter.className}`}>
           {children}

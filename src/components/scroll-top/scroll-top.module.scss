@@ -4,3 +4,32 @@
   font-size: 1rem;
   cursor: pointer;
 }
+
+.btn-arrow {
+  background-color: white;
+  border-radius: 50%;
+  border: none;
+  bottom: 50px;
+  cursor: pointer;
+  height: 3rem;
+  width: 3rem;
+  opacity: 0.7;
+  position: fixed;
+  right: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99;
+
+  @media (max-width: 700px) {
+    right: 40px;
+  }
+
+  @media screen and (min-width: 1400px) {
+    right: 100px;
+  }
+
+  @media screen and (min-width: 1800px) {
+    right: 120px;
+  }
+}
