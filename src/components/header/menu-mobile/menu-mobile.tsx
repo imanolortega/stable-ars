@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import styles from "../header.module.scss";
 import Link from "next/link";
+import { MENU_LINKS } from "@/utils/info";
 
 export default function MenuMobile() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -68,16 +69,15 @@ export default function MenuMobile() {
           </button>
           <nav>
             <ol>
-              <li>
-                <Link href="/" onClick={closeMenu}>
-                  Inicio
-                </Link>
-              </li>
-              <li>
-                <Link href="/sobre-stablecoins" onClick={closeMenu}>
-                  Sobre Stablecoins
-                </Link>
-              </li>
+              {MENU_LINKS.map((link) => {
+                return (
+                  <li key={link.url}>
+                    <Link href={link.url} onClick={closeMenu}>
+                      {link.title}
+                    </Link>
+                  </li>
+                );
+              })}
             </ol>
           </nav>
         </div>

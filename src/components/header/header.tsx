@@ -3,6 +3,7 @@ import Image from "next/image";
 import styles from "./header.module.scss";
 import Link from "next/link";
 import MenuMobile from "./menu-mobile/menu-mobile";
+import { MENU_LINKS } from "@/utils/info";
 const inter = Inter({ subsets: ["latin"] });
 
 export default async function Header() {
@@ -23,9 +24,13 @@ export default async function Header() {
       <div className={styles["navbar-desktop"]}>
         <nav>
           <ol>
-            <li>
-              <Link href="/sobre-stablecoins">Sobre Stablecoins</Link>
-            </li>
+            {MENU_LINKS.map((link) => {
+              return (
+                <li key={link.url}>
+                  <Link href={link.url}>{link.title}</Link>
+                </li>
+              );
+            })}
           </ol>
         </nav>
       </div>

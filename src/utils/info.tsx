@@ -1,3 +1,14 @@
+export const MENU_LINKS = [
+  {
+    url: "/",
+    title: "Inicio",
+  },
+  {
+    url: "/sobre-stablecoins",
+    title: "Sobre Stablecoins",
+  },
+];
+
 export const ABOUT = (
   <>
     Las stablecoins son un tipo de criptomoneda diseñada para mantener un valor
