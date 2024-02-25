@@ -2,6 +2,13 @@ import { ABOUT, cryptoInfo } from "@/utils/info";
 import Aside from "@/components/aside/aside";
 import styles from "./page.module.scss";
 import Link from "next/link";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Stablears | ¿Qué son las Stablecoins?",
+  description:
+    "Qué son las Stablecoins. Todo sobre las Stablecoins, DAI, USDC y USDT.",
+};
 
 export default async function Home() {
   return (
