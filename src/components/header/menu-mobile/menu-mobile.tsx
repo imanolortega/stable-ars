@@ -22,6 +22,8 @@ export default function MenuMobile() {
     }
   }, [menuOpen]);
 
+  const iconColor = "#fafafa";
+
   return (
     <div className={styles["navbar-mobile"]}>
       <button
@@ -32,7 +34,7 @@ export default function MenuMobile() {
         <span>
           {menuOpen ? (
             <svg
-              fill="#fafafa"
+              fill={iconColor}
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 384 512"
             >
@@ -40,7 +42,7 @@ export default function MenuMobile() {
             </svg>
           ) : (
             <svg
-              fill="#fafafa"
+              fill={iconColor}
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 448 512"
             >
@@ -57,7 +59,7 @@ export default function MenuMobile() {
             onClick={toggleMenu}
           >
             <svg
-              fill="#fafafa"
+              fill={iconColor}
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 384 512"
             >
