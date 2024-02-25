@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import styles from "../header.module.scss";
 import Link from "next/link";
 import { MENU_LINKS } from "@/utils/info";
+import Footer from "@/components/footer/footer";
 
 export default function MenuMobile() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -79,9 +80,13 @@ export default function MenuMobile() {
                 );
               })}
             </ol>
+            <div>
+              <Footer />
+            </div>
           </nav>
         </div>
       )}
+
     </div>
   );
 }
