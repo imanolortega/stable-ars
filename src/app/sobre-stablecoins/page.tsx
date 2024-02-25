@@ -14,8 +14,12 @@ export default async function Home() {
               <li>
                 <Link href="/">Inicio</Link>
               </li>
-              <li><span>{">"}</span></li>
-              <li><span>Sobre Stablecoins</span></li>
+              <li>
+                <span>{">"}</span>
+              </li>
+              <li>
+                <span>Sobre Stablecoins</span>
+              </li>
             </ol>
           </nav>
         </div>

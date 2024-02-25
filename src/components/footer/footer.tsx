@@ -4,7 +4,7 @@ import styles from "../../app/page.module.scss";
 export default function Footer() {
   return (
     <footer className={styles["footer"]}>
-      <p>
+      <p style={{ marginBottom: "0.5rem" }}>
         Datos obtenidos a través de la API de{blankSpace}
         <a
           className={styles["link"]}
