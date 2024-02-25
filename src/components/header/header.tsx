@@ -1,7 +1,8 @@
-import Image from "next/image";
-import styles from "../../app/layout.module.scss";
 import { Inter } from "next/font/google";
+import Image from "next/image";
+import styles from "./header.module.scss";
 import Link from "next/link";
+import MenuMobile from "./menu-mobile/menu-mobile";
 const inter = Inter({ subsets: ["latin"] });
 
 export default async function Header() {
@@ -19,7 +20,7 @@ export default async function Header() {
         />
         <p>STABLEARS</p>
       </Link>
-      <div className={styles["navbar"]}>
+      <div className={styles["navbar-desktop"]}>
         <nav>
           <ol>
             <li>
@@ -28,6 +29,7 @@ export default async function Header() {
           </ol>
         </nav>
       </div>
+      <MenuMobile />
     </header>
   );
 }
