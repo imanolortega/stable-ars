@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import styles from "./menu-mobile.module.scss";
 import Link from "next/link";
-import { MENU_LINKS } from "@/utils/info";
+import { MOBILE_MENU_LINKS } from "@/utils/info";
 import Footer from "@/components/footer/footer";
 
 export default function MenuMobile() {
@@ -74,7 +74,7 @@ export default function MenuMobile() {
         </button>
         <nav>
           <ol>
-            {MENU_LINKS.map((link) => {
+            {MOBILE_MENU_LINKS.map((link) => {
               return (
                 <li key={link.url}>
                   <Link href={link.url} onClick={closeMenu}>
