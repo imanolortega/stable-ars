@@ -5,12 +5,11 @@ import Header from "@/components/header/header";
 import Footer from "@/components/footer/footer";
 import styles from "./layout.module.scss";
 import { Inter } from "next/font/google";
-import ScrollTop from "@/components/scroll-top/scroll-top";
 import ArrowBtn from "@/components/arrow-btn/arrow-btn";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Stablears | Cotizaciones de stablecoins en Argentina",
+  title: "Stablears | Cotizaciones de stablecoins en Argentina | Cotización del Dólar Crypto",
   description:
     "Cotizaciones de stablecoins en Argentina: DAI, USDC, USDT en pesos argentinos.",
 };
