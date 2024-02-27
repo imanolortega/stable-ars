@@ -29,7 +29,7 @@ export default function MenuMobile() {
   return (
     <div className={styles["navbar-mobile"]}>
       <button
-        aria-label={"open-menu-icon"}
+        aria-label="open-menu-icon"
         className={styles["menu-icon"]}
         onClick={toggleMenu}
       >

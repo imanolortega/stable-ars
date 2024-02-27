@@ -1,5 +1,6 @@
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import ArrowBtn from "@/components/arrow-btn/arrow-btn";
 import Footer from "@/components/footer/footer";
 import Header from "@/components/header/header";
@@ -29,6 +30,7 @@ export default function RootLayout({
         <Header />
         <main className={`${styles["main"]} ${inter.className}`}>
           {children}
+          <SpeedInsights />
         </main>
         <Analytics />
         <Footer />
