@@ -1,11 +1,12 @@
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
-import type { Metadata } from "next";
-import Header from "@/components/header/header";
-import Footer from "@/components/footer/footer";
-import styles from "./layout.module.scss";
-import { Inter } from "next/font/google";
 import ArrowBtn from "@/components/arrow-btn/arrow-btn";
+import Footer from "@/components/footer/footer";
+import Header from "@/components/header/header";
+import styles from "./layout.module.scss";
+import type { Metadata } from "next";
+
+import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {

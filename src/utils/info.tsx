@@ -1,7 +1,7 @@
 export const MENU_LINKS = [
   {
     url: "/",
-    title: "Inicio",
+    title: "Cotizaciones",
   },
   {
     url: "/sobre-stablecoins",
@@ -12,7 +12,7 @@ export const MENU_LINKS = [
 export const MOBILE_MENU_LINKS = [
   {
     url: "/",
-    title: "Inicio",
+    title: "Cotizaciones",
   },
   {
     url: "/sobre-stablecoins",
