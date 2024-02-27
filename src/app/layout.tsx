@@ -10,7 +10,8 @@ import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Stablears | Cotizaciones de stablecoins en Argentina | Cotización del Dólar Crypto",
+  title:
+    "Stablears | Cotizaciones de stablecoins en Argentina | Cotización del Dólar Crypto",
   description:
     "Cotizaciones de stablecoins en Argentina: DAI, USDC, USDT en pesos argentinos.",
 };

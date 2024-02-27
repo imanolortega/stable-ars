@@ -2,6 +2,10 @@
   display: none;
   z-index: 100;
 
+  .open-menu-icon {
+    z-index: 100;
+  }
+
   .menu-icon,
   .close-icon {
     z-index: 101;
@@ -13,6 +17,14 @@
     background: none;
     border: none;
     cursor: pointer;
+  }
+
+  .menu-icon {
+    z-index: 100;
+  }
+
+  .close-icon {
+    top: 4.3rem;
   }
 
   .navbar-inner {
