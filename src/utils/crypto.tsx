@@ -34,17 +34,23 @@ export async function getCryptoCurrencies() {
     const exchangeData: Record<string, any> = {};
 
     for (const coin of stableCoins) {
-      const url = `https://criptoya.com/api/${exchange}/${coin}/ars/0.1`;
-      const response = await fetch(url, {
-        cache: "no-store",
-      });
-      const data = await response.json();
-      exchangeData[coin] = data;
+      const url = `https://criptoya.com/api/${exchange}/${coin}/ars/0.5`;
+      try {
+        const response = await fetch(url, {
+          cache: "no-store",
+        });
+        if (response.ok) {
+          const data = await response.json();
+          exchangeData[coin] = data;
+        } else {
+          console.error(`Failed to fetch data for ${exchange} - ${coin}`);
+        }
+      } catch (err) {
+        console.error(`Error fetching data for ${exchange} - ${coin}: ${err}`);
+      }
     }
 
-    const name = exchangeNameMapping[exchange].name;
-    const url = exchangeNameMapping[exchange].url;
-
+    const { name, url } = exchangeNameMapping[exchange];
     allStableCoins.push({ exchange, name, url, data: exchangeData });
   }
 
