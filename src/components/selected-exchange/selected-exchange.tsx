@@ -74,14 +74,14 @@ export default function SelectedExchange({
               key={currency}
               currency={currency}
               ask={`${parseFloat(
-                selectedExchangeData?.data[currency].ask
+                selectedExchangeData?.data[currency]?.ask
               ).toFixed(2)}`}
               bid={`${parseFloat(
-                selectedExchangeData?.data[currency].bid
+                selectedExchangeData?.data[currency]?.bid
               ).toFixed(2)}`}
               spread={`${(
-                parseFloat(selectedExchangeData?.data[currency].ask) -
-                parseFloat(selectedExchangeData?.data[currency].bid)
+                parseFloat(selectedExchangeData?.data[currency]?.ask) -
+                parseFloat(selectedExchangeData?.data[currency]?.bid)
               ).toFixed(2)}`}
             />
           ))}

@@ -8,6 +8,7 @@ import styles from "./layout.module.scss";
 import type { Metadata } from "next";
 
 import { Inter } from "next/font/google";
+import GoogleAnalytics from "@/components/google-analytics/google-analytics";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -25,6 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en" data-theme="dark" style={{ colorScheme: "dark" }}>
       <link rel="icon" href="/favicon.ico" />
+      <GoogleAnalytics />
       <body>
         <ArrowBtn />
         <Header />
