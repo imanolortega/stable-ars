@@ -26,6 +26,10 @@ export default function RootLayout({
   return (
     <html lang="en" data-theme="dark" style={{ colorScheme: "dark" }}>
       <link rel="icon" href="/favicon.ico" />
+      <meta
+        name="google-site-verification"
+        content="7SSZwPzF4sLxKlTbnoS4RgTjVTctnEI9vVRzLBzcRGs"
+      />
       <GoogleAnalytics />
       <body>
         <ArrowBtn />
