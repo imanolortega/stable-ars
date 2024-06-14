@@ -14,12 +14,21 @@ interface HomeSectionsProps {
   }>;
 }
 
-export default async function HomeSections({
+export default function HomeSections({
   average,
   currencies,
   data,
 }: HomeSectionsProps) {
-  const lastUpdate = await formatTimestampToDateTime(data[0].data.dai.time);
+  let lastUpdate = "No data available";
+  if (
+    data &&
+    data[0] &&
+    data[0].data &&
+    data[0].data.dai &&
+    data[0].data.dai.time
+  ) {
+    lastUpdate = formatTimestampToDateTime(data[0].data.dai.time);
+  }
 
   const homeSections = [
     {
