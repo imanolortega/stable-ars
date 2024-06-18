@@ -21,11 +21,7 @@ export default function HomeSections({
 }: HomeSectionsProps) {
   let lastUpdate = "No data available";
   if (
-    data &&
-    data[0] &&
-    data[0].data &&
-    data[0].data.dai &&
-    data[0].data.dai.time
+    data[0]?.data?.dai?.time
   ) {
     lastUpdate = formatTimestampToDateTime(data[0].data.dai.time);
   }
