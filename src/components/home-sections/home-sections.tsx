@@ -1,8 +1,8 @@
-import styles from "./home-sections.module.scss";
-import SelectedExchange from "@/components/selected-exchange/selected-exchange";
-import BestPrices from "@/components/best-prices/best-prices";
-import AveragePrices from "@/components/average-prices/average-prices";
 import { formatTimestampToDateTime } from "@/utils/common";
+import AveragePrices from "@/components/average-prices/average-prices";
+import BestPrices from "@/components/best-prices/best-prices";
+import SelectedExchange from "@/components/selected-exchange/selected-exchange";
+import styles from "./home-sections.module.scss";
 
 interface HomeSectionsProps {
   average: any;

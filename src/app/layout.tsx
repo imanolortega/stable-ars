@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   title:
     "Stablears | Cotizaciones de stablecoins en Argentina | Cotización del Dólar Crypto",
   description:
-    "Cotizaciones de stablecoins en Argentina: DAI, USDC, USDT en pesos argentinos.",
+    "De Stables a ARS. De ARS a Stables. Cotizaciones de stablecoins en Argentina: DAI, USDC, USDT en pesos argentinos.",
 };
 
 export default function RootLayout({
